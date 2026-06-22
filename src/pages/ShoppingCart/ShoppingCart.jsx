@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import Breadcrumbs from '../../assets/wishlist/Breadcrumbs.png';
-import greenCapsicum from '../../assets/wishlist/green capsicum.png';
-import redCapsicum from '../../assets/wishlist/red capsicum.png';
+import greenCapsicum from '../../assets/home-assets/banner/coffe01.webp';
+import redCapsicum from '../../assets/home-assets/banner/coffee02.webp';
 import Nav_Banner from '../../Shared/Nav-Banner/Nav_Banner';
 import { RxCross2 } from "react-icons/rx";
 
@@ -52,7 +51,7 @@ const ShoppingCart = () => {
                                     </td>
 
                                     <td>
-                                        <div className='flex items-center gap-3 border-2 w-fit p-2 rounded-full'>
+                                        <div className='flex items-center gap-3 p-2 border-2 rounded-full w-fit'>
                                             <button className='btn btn-circle btn-xs'>-</button>
                                             <h3 className='font-semibold'>5</h3>
                                             <button className='btn btn-circle btn-xs'>+</button>
@@ -83,7 +82,7 @@ const ShoppingCart = () => {
 
                                 <p className='text-xl font-bold text-black'>Coupon code </p>
 
-                                <label className="flex w-3/4 items-center input input-bordered rounded-full pr-0">
+                                <label className="flex items-center w-3/4 pr-0 rounded-full input input-bordered">
                                     <input type="text" className=" grow" placeholder="Entry coupon" />
                                     <button className='bg-[#333333] btn text-white rounded-full '>Apply Coupon</button>
                                 </label>
@@ -131,7 +130,7 @@ const ShoppingCart = () => {
                         <div className='flex items-center justify-center border border-gray-300'>
 
                             <div className='flex items-center justify-center m-5'>
-                                <Link to="/billing-info"> <span className='w-full px-20 py-2 text-white bg-green-500 rounded-full hover:bg-gray-100 hover:text-green-500 '>Proceed to checkout</span></Link>
+                                <Link to="/billing-info"> <span className='w-full px-20 py-2 text-white bg-red-500 rounded-full hover:bg-gray-100 hover:text-red-500 '>Proceed to checkout</span></Link>
                             </div>
                         </div>
 

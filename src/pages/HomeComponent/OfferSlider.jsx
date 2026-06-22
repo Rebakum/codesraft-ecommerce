@@ -62,7 +62,7 @@ const OfferSlider = () => {
               {offer.description}
             </p>
 
-            <button className="flex items-center gap-2 px-8 py-4 mt-8 text-lg font-semibold text-green-600 transition-all bg-white rounded-full hover:bg-green-600 hover:text-white">
+            <button className="flex items-center gap-2 px-8 py-4 mt-8 text-lg font-semibold text-red-600 transition-all bg-white rounded-full hover:bg-red-600 hover:text-white">
               Shop Now
               <FaArrowRight />
             </button>

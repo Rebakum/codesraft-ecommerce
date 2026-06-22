@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import banner1 from "../../assets/home-assets/banner/bannar-01.jpg";
 import banner2 from "../../assets/home-assets/banner/bannar-02.jpg";
 import banner3 from "../../assets/home-assets/banner/bannar-03.jpg";
+import banner4 from "../../assets/home-assets/banner/bannar-04.jpg";
 
 
 const slides = [
@@ -15,7 +16,7 @@ const slides = [
     description:
       "Discover our handpicked single-origin beans from Ethiopia, Colombia, and Guatemala. Roasted fresh weekly.",
     image: banner1,
-    accent: "bg-amber-600",
+    accent: "bg-red-600",
   },
   {
     id: 2,
@@ -25,7 +26,7 @@ const slides = [
     description:
       "Small-batch roasted beans crafted by master roasters. From farm to cup, every sip tells a story.",
     image: banner2,
-    accent: "bg-orange-500",
+    accent: "bg-red-500",
   },
   {
     id: 3,
@@ -36,6 +37,16 @@ const slides = [
       "Everything you need for the perfect brew. Beans, equipment, and accessories at unbeatable prices.",
     image: banner3,
     accent: "bg-rose-600",
+  },
+  {
+    id: 4,
+    tag: "New Arrivals",
+    title: "Fresh Roasts\nThat Inspire",
+    discount: "30% OFF",
+    description:
+      "Try our newest small-batch roasts with rich aroma and bold taste, crafted for your perfect cup.",
+    image: banner4,
+    accent: "bg-amber-500",
   },
 ];
 
@@ -54,14 +65,14 @@ const HeroSlider = () => {
   const slide = slides[current];
 
   return (
-    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden rounded-2xl">
         <div key={slide.id} className="absolute inset-0 h-full">
           <img
             src={slide.image}
             alt={slide.title}
             className="absolute inset-0 object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-950/90 via-amber-900/60 to-transparent" />
+          <div className="absolute inset-0 " />
 
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 text-center sm:px-10 md:px-14 lg:px-16">
             <span className={`inline-block ${slide.accent} text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase`}>
@@ -76,7 +87,7 @@ const HeroSlider = () => {
               <span className="text-base font-medium text-white/80 md:text-lg">
                 Today only
               </span>
-              <span className="px-5 py-2 text-lg font-extrabold bg-white rounded-lg shadow-lg text-amber-800 md:text-xl">
+              <span className="px-5 py-2 text-lg font-extrabold text-red-800 bg-white rounded-lg shadow-lg md:text-xl">
                 {slide.discount}
               </span>
             </div>
@@ -85,7 +96,7 @@ const HeroSlider = () => {
               {slide.description}
             </p>
 
-            <button className="bg-white text-amber-800 font-bold px-8 py-3.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-shadow text-sm md:text-base">
+            <button className="bg-white text-red-800 font-bold px-8 py-3.5 rounded-full flex items-center gap-2 hover:shadow-lg transition-shadow text-sm md:text-base">
               Order Now
               <FaArrowRight className="text-sm" />
             </button>

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Card = ({ open }) => {
   return (
     <div>
-      <div className="w-full group rounded-lg shadow  border hover:border-[#2C742F]">
+      <div className="w-full group rounded-lg shadow  border hover:border-[#991B1B]">
         <div className="w-full  h-[302px] relative">
           <img
             src="./image/Tomato.png"
@@ -33,7 +33,7 @@ const Card = ({ open }) => {
             </button>
             <Tooltip
               id="wishlist"
-              className="bg-[#00B207]  text-white text-sm "
+              className="bg-[#DC2626]  text-white text-sm "
             />
             <button
               data-tooltip-id="quick"
@@ -44,12 +44,12 @@ const Card = ({ open }) => {
             >
               <LuEye className="text-xl" />
             </button>
-            <Tooltip id="quick" className="bg-[#00B207]  text-white text-sm " />
+            <Tooltip id="quick" className="bg-[#DC2626]  text-white text-sm " />
           </div>
         </div>
 
         <div className="p-4">
-          <h4 className="text-gray group-hover:text-[#2C742F]">Red Tomato</h4>
+          <h4 className="text-gray group-hover:text-[#991B1B]">Red Tomato</h4>
           <div className="flex justify-between items-center">
             <h4 className="text-lg font-bold">
               $<span>14.99</span>
@@ -60,12 +60,12 @@ const Card = ({ open }) => {
                 data-tooltip-id="cart"
                 data-tooltip-content="Add to cart"
                 data-tooltip-place="top"
-                className="rounded-full btn p-3 border bg-[#E6E6E6] group-hover:bg-[#00B207] flex justify-center items-center outline-none"
+                className="rounded-full btn p-3 border bg-[#E6E6E6] group-hover:bg-[#DC2626] flex justify-center items-center outline-none"
               >
                 <RiShoppingBagLine className="text-xl group-hover:text-white" />
               </button>
             </Link>
-            <Tooltip id="cart" className="bg-[#00B207]  text-white text-sm " />
+            <Tooltip id="cart" className="bg-[#DC2626]  text-white text-sm " />
           </div>
           <Rating style={{ maxWidth: 120 }} value={4} />
         </div>

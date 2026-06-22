@@ -1,18 +1,17 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../Shared/Footer/Footer";
-import NavBar from "../Shared/Navbar/NavBar";
-import NewsLetter from "../Shared/NewsLetter/NewsLetter";
-
+import Navbar from "../pages/Shared/Navbar";
+import Footer from "../pages/Shared/Footer";
 
 const MainLayout = () => {
-    return (
-        <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] transition-colors duration-200">
-            <NavBar />
+  return (
+    <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
+      <Navbar />
 
-            <Outlet />
-            <Footer />
-        </div>
-    );
+      <Outlet />
+
+      <Footer />
+    </div>
+  );
 };
 
 export default MainLayout;

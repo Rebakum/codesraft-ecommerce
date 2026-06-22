@@ -28,9 +28,9 @@ const Sidebar = () => {
           id="category-search"
           type="text"
           placeholder="Search our menu..."
-          className="w-full pl-10 pr-4 text-sm transition-all border h-11 bg-amber-50 border-amber-100 rounded-xl focus:outline-none focus:border-amber-500 focus:bg-white"
+          className="w-full pl-10 pr-4 text-sm transition-all border h-11 bg-red-50 border-red-100 rounded-xl focus:outline-none focus:border-red-500 focus:bg-white"
         />
-        <FaSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-400 text-sm" />
+        <FaSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-red-400 text-sm" />
       </div>
 
       <h3 className="mb-4 text-lg font-bold text-gray-800" style={{ fontFamily: "Georgia, serif" }}>
@@ -42,14 +42,14 @@ const Sidebar = () => {
           const Icon = cat.icon;
           return (
             <li key={cat.name}>
-              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-amber-50 hover:text-amber-800 transition-all duration-200 group">
-                <span className="flex items-center justify-center transition-all duration-200 rounded-lg w-9 h-9 bg-amber-50 group-hover:bg-amber-700 group-hover:text-white">
+              <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-700 hover:bg-red-50 hover:text-red-800 transition-all duration-200 group">
+                <span className="flex items-center justify-center transition-all duration-200 rounded-lg w-9 h-9 bg-red-50 group-hover:bg-red-700 group-hover:text-white">
                   <Icon className="text-sm" />
                 </span>
                 <span className="flex-1 text-sm font-medium text-left">
                   {cat.name}
                 </span>
-                <span className="text-xs font-medium text-gray-400 group-hover:text-amber-700">
+                <span className="text-xs font-medium text-gray-400 group-hover:text-red-700">
                   {cat.count}
                 </span>
               </button>

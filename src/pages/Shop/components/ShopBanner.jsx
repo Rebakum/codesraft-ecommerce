@@ -14,7 +14,7 @@ const ShopBanner = () => {
               <MdOutlineNavigateNext />
               <span>Categories</span>
               <MdOutlineNavigateNext />
-              <span className="text-[#00B207]">Coffee Beans</span>
+              <span className="text-[#DC2626]">Coffee Beans</span>
             </div>
           </div>
         </div>

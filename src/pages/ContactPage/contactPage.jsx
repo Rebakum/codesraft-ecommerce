@@ -2,29 +2,34 @@ import { BsEnvelope } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineWifiCalling3 } from "react-icons/md";
 import Map from "./Map";
+import Nav_Banner from "../Shared/Nav_Banner";
 
 const ContactPage = () => {
     return (
-        <div className="bg-slate-50 all-container mx-auto">
+
+     <div>
+                        <Nav_Banner name={"Contact Us"} path={"/contact"} />
+
+           <div className="mx-auto bg-slate-50 all-container">
             <div className="flex flex-col items-start justify-between gap-3 p-10 lg:flex-row lg:gap-10">
                 <div className="">
                 <div className="flex flex-col items-center justify-center flex-1 p-10 bg-white shadow-lg ">
                         <span >
-                            < CiLocationOn className="text-4xl text-green-500 border-b-2 border-green-500" />
+                            < CiLocationOn className="text-4xl text-red-500 border-b-2 border-red-500" />
                         </span>
                         <p>27|5 Ash Dr. San jose, South</p>
                         <p>Dako ta *3475</p>
                     </div>
                 <div className="flex flex-col items-center justify-center flex-1 p-10 bg-white border shadow-lg ">
                         <span >
-                        <BsEnvelope className="text-4xl text-green-500 " />
+                        <BsEnvelope className="text-4xl text-red-500 " />
                         </span>
                         <p>27|5 Ash Dr. San jose, South</p>
                         <p>Dako ta *3475</p>
                     </div>
                 <div className="flex flex-col items-center justify-center flex-1 p-10 bg-white shadow-lg ">
                         <span >
-                        <MdOutlineWifiCalling3 className="text-4xl text-green-500 " />
+                        <MdOutlineWifiCalling3 className="text-4xl text-red-500 " />
                         </span>
                         <p>27|5 Ash Dr. San jose, South</p>
                         <p>Dako ta *3475</p>
@@ -54,7 +59,7 @@ const ContactPage = () => {
                                     <label htmlFor="order-notes" className="text-sm"></label>
                                     <textarea id="order-notes" placeholder="Subject" className="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600" />
                                 </div>
-                                <button className="text-white bg-green-500 rounded-full btn">Send Message</button>
+                                <button className="text-white bg-red-500 rounded-full btn">Send Message</button>
 
                             </div>
                         </form>
@@ -64,6 +69,7 @@ const ContactPage = () => {
             </div>
             <Map/>
         </div>
+     </div>
 
 
     );

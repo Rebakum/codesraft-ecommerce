@@ -74,7 +74,7 @@ const PopularProducts = () => {
     <section className="py-10">
       {/* Header */}
       <div className="max-w-3xl mx-auto mb-10 text-center">
-        <p className="mb-3 text-sm font-semibold tracking-[0.2em] uppercase text-amber-700">
+        <p className="mb-3 text-sm font-semibold tracking-[0.2em] uppercase text-red-700">
           Premium Coffee Collection
         </p>
 
@@ -94,7 +94,7 @@ const PopularProducts = () => {
 
       {/* View All */}
       <div className="flex justify-end mb-8">
-        <button className="flex items-center gap-2 text-sm font-semibold text-amber-700 hover:underline">
+        <button className="flex items-center gap-2 text-sm font-semibold text-red-700 hover:underline">
           View All Products
           <FaArrowRight />
         </button>
@@ -105,17 +105,17 @@ const PopularProducts = () => {
         {products.map((p) => (
           <div
             key={p.id}
-            className="relative p-3 transition-all duration-300 bg-white border border-amber-100 rounded-2xl hover:border-amber-600 hover:shadow-xl group"
+            className="relative p-3 transition-all duration-300 bg-white border border-red-100 rounded-2xl hover:border-red-600 hover:shadow-xl group"
           >
             {/* Sale Badge */}
             {p.sale && (
-              <span className="absolute z-10 px-2 py-1 text-[10px] md:text-xs font-bold text-white rounded-lg top-3 left-3 bg-amber-700">
+              <span className="absolute z-10 px-2 py-1 text-[10px] md:text-xs font-bold text-white rounded-lg top-3 left-3 bg-red-700">
                 {p.sale}% OFF
               </span>
             )}
 
             {/* Product Image */}
-            <div className="flex items-center justify-center h-32 mb-3 overflow-hidden md:h-40 rounded-xl bg-amber-50">
+            <div className="flex items-center justify-center h-32 mb-3 overflow-hidden md:h-40 rounded-xl bg-red-50">
               <img
                 src={p.image}
                 alt={p.name}
@@ -124,12 +124,12 @@ const PopularProducts = () => {
             </div>
 
             {/* Category */}
-            <p className="mb-1 text-[10px] md:text-xs font-semibold uppercase text-amber-700">
+            <p className="mb-1 text-[10px] md:text-xs font-semibold uppercase text-red-700">
               {p.category}
             </p>
 
             {/* Name */}
-            <h3 className="mb-2 text-sm font-semibold text-gray-800 md:text-base group-hover:text-amber-700">
+            <h3 className="mb-2 text-sm font-semibold text-gray-800 md:text-base group-hover:text-red-700">
               {p.name}
             </h3>
 
@@ -140,7 +140,7 @@ const PopularProducts = () => {
                   key={i}
                   className={`text-[10px] md:text-xs ${
                     i < Math.floor(p.rating)
-                      ? "text-amber-400"
+                      ? "text-red-400"
                       : "text-gray-200"
                   }`}
                 />
@@ -152,7 +152,7 @@ const PopularProducts = () => {
 
             {/* Price */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-sm font-bold md:text-base text-amber-700">
+              <span className="text-sm font-bold md:text-base text-red-700">
                 ${p.discount.toFixed(2)}
               </span>
 

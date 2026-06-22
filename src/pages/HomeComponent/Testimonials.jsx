@@ -15,7 +15,7 @@ const Testimonials = () => {
     <section className="py-10">
       {/* Section Header */}
       <div className="max-w-3xl mx-auto mb-10 text-center">
-        <span className="mb-3 text-sm font-semibold tracking-[0.2em] uppercase text-amber-700">
+        <span className="mb-3 text-sm font-semibold tracking-[0.2em] uppercase text-red-700">
           Testimonials
         </span>
 
@@ -40,7 +40,7 @@ const Testimonials = () => {
             className="relative p-8 transition-all duration-300 bg-white border border-gray-100 shadow-sm rounded-3xl hover:shadow-xl"
           >
             {/* Quote Icon */}
-            <div className="absolute text-5xl text-green-100 top-6 right-6">
+            <div className="absolute text-5xl text-red-100 top-6 right-6">
               <FaQuoteLeft />
             </div>
 
@@ -68,7 +68,7 @@ const Testimonials = () => {
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                className="object-cover border-2 border-green-100 rounded-full w-14 h-14"
+                className="object-cover border-2 border-red-100 rounded-full w-14 h-14"
               />
 
               <div>

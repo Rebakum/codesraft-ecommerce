@@ -39,19 +39,19 @@ const ProductDetailsCenter = () => {
                 <div className="mt-5">
                   <ul>
                     <li className="flex items-center gap-2 mt-2">
-                      <FaCircleCheck className="text-[#00B207] mt-2" />{" "}
+                      <FaCircleCheck className="text-[#DC2626] mt-2" />{" "}
                       <span>100 g of fresh leaves provides.</span>
                     </li>
                     <li className="flex items-center gap-2 mt-2">
-                      <FaCircleCheck className="text-[#00B207] mt-2" />{" "}
+                      <FaCircleCheck className="text-[#DC2626] mt-2" />{" "}
                       <span>Aliquam ac est at augue volutpat elementum.</span>
                     </li>
                     <li className="flex items-center gap-2 mt-2">
-                      <FaCircleCheck className="text-[#00B207] mt-2" />{" "}
+                      <FaCircleCheck className="text-[#DC2626] mt-2" />{" "}
                       <span>100 g of fresh leaves provides.</span>
                     </li>
                     <li className="flex items-center gap-2 mt-2">
-                      <FaCircleCheck className="text-[#00B207]" />{" "}
+                      <FaCircleCheck className="text-[#DC2626]" />{" "}
                       <span>Aliquam ac est at augue volutpat elementum.</span>
                     </li>
                   </ul>
@@ -94,7 +94,7 @@ const ProductDetailsCenter = () => {
 
                 <div className="flex flex-col md:flex-row mt-5 border shadow-sm rounded-md p-3 justify-between items-center gap-5">
                   <div className="flex items-center gap-2">
-                    <MdOutlineDiscount className="text-[#00B207] text-2xl" />
+                    <MdOutlineDiscount className="text-[#DC2626] text-2xl" />
                     <div>
                       <h5 className="text-sm font-bold">
                         <span>64% </span>Discount
@@ -105,7 +105,7 @@ const ProductDetailsCenter = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <IoLeafOutline className="text-[#00B207] text-2xl" />
+                    <IoLeafOutline className="text-[#DC2626] text-2xl" />
                     <div>
                       <h5 className="text-sm font-bold">100% Arabica</h5>
                       <p className="text-sm text-gray m-1">
@@ -183,7 +183,7 @@ const ProductDetailsCenter = () => {
 
                 <div className="flex flex-col md:flex-row mt-5 border shadow-sm rounded-md p-3 justify-between items-center gap-5">
                   <div className="flex items-center gap-2">
-                    <MdOutlineDiscount className="text-[#00B207] text-2xl" />
+                    <MdOutlineDiscount className="text-[#DC2626] text-2xl" />
                     <div>
                       <h5 className="text-sm font-bold">
                         <span>64% </span>Discount
@@ -194,7 +194,7 @@ const ProductDetailsCenter = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <IoLeafOutline className="text-[#00B207] text-2xl" />
+                    <IoLeafOutline className="text-[#DC2626] text-2xl" />
                     <div>
                       <h5 className="text-sm font-bold">100% Arabica</h5>
                       <p className="text-sm text-gray m-1">
@@ -307,7 +307,7 @@ const ProductDetailsCenter = () => {
                     delivering a rich and smooth cup with notes of chocolate,
                     citrus, and caramel.
                   </p>
-                  <button className="btn bg-[#56AC59] bg-opacity-50 text-[#00B207] rounded-[43px] px-8 ">
+                  <button className="btn bg-[#DC2626] bg-opacity-50 text-[#DC2626] rounded-[43px] px-8 ">
                     Load More
                   </button>
                 </div>

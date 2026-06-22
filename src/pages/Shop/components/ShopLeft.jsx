@@ -68,7 +68,7 @@ const ShopLeft = () => {
                       id="single-origin"
                       name="category"
                       value="single-origin"
-                      className="radio border-2 border-[#00B207]  focus:!outline-none"
+                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
                     />{" "}
                     <label htmlFor="single-origin">
                       {" "}
@@ -82,7 +82,7 @@ const ShopLeft = () => {
                       id="roastery"
                       name="category"
                       value="roastery"
-                      className="radio border-2 border-[#00B207]  focus:!outline-none"
+                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
                     />{" "}
                     <label htmlFor="roastery">
                       {" "}
@@ -96,7 +96,7 @@ const ShopLeft = () => {
                       id="blends"
                       name="category"
                       value="blends"
-                      className="radio border-2 border-[#00B207]  focus:!outline-none"
+                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
                     />{" "}
                     <label htmlFor="blends">
                       {" "}
@@ -110,7 +110,7 @@ const ShopLeft = () => {
                       id="cold-brew"
                       name="category"
                       value="cold-brew"
-                      className="radio border-2 border-[#00B207]  focus:!outline-none"
+                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
                     />{" "}
                     <label htmlFor="cold-brew">
                       {" "}
@@ -124,7 +124,7 @@ const ShopLeft = () => {
                       id="subscriptions"
                       name="category"
                       value="subscriptions"
-                      className="radio border-2 border-[#00B207]  focus:!outline-none"
+                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
                     />{" "}
                     <label htmlFor="subscriptions">
                       <span className="cursor-pointer">
@@ -139,7 +139,7 @@ const ShopLeft = () => {
                       id="coffee-gear"
                       name="category"
                       value="coffee-gear"
-                      className="radio border-2 border-[#00B207]  focus:!outline-none"
+                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
                     />{" "}
                     <label htmlFor="coffee-gear">
                       <span className="cursor-pointer">Coffee Gear(25)</span>
@@ -178,7 +178,7 @@ const ShopLeft = () => {
                         width: "100%",
                         background: getTrackBackground({
                           values,
-                          colors: ["#ccc", "#00B207", "#ccc"],
+                          colors: ["#ccc", "#DC2626", "#ccc"],
                           min,
                           max,
                         }),
@@ -196,12 +196,12 @@ const ShopLeft = () => {
                         width: "20px",
                         borderRadius: "50%",
                         backgroundColor: "#FFF",
-                        border: "3px solid #00B207",
+                        border: "3px solid #DC2626",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
                         boxShadow: "0px 2px 6px #AAA",
-                        outlineColor: "#00B207",
+                        outlineColor: "#DC2626",
                       }}
                     >
                       <div
@@ -245,7 +245,7 @@ const ShopLeft = () => {
                     type="checkbox"
                     defaultChecked
                     id="fiveStar"
-                    className="checked:bg-[#00B207] mr-3 h-5 w-5 checkbox-rating text-[#00B207] "
+                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="fiveStar" className="flex items-center gap-2">
                     <span className="flex items-center gap-2 text-orange-500 text-xl">
@@ -259,7 +259,7 @@ const ShopLeft = () => {
                   <input
                     type="checkbox"
                     id="4Star"
-                    className="checked:bg-[#00B207] mr-3 h-5 w-5 checkbox-rating text-[#00B207] "
+                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="4Star" className="flex items-center gap-2">
                     <span className="flex items-center gap-2 text-orange-500 text-xl">
@@ -275,7 +275,7 @@ const ShopLeft = () => {
                   <input
                     type="checkbox"
                     id="3Star"
-                    className="checked:bg-[#00B207] mr-3 h-5 w-5 checkbox-rating text-[#00B207] "
+                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="3Star" className="flex items-center gap-2">
                     <span className="flex items-center gap-2 text-orange-500 text-xl">
@@ -292,7 +292,7 @@ const ShopLeft = () => {
                   <input
                     type="checkbox"
                     id="2Star"
-                    className="checked:bg-[#00B207] mr-3 h-5 w-5 checkbox-rating text-[#00B207] "
+                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="2Star" className="flex items-center gap-2">
                     <span className="flex items-center gap-2 text-orange-500 text-xl">
@@ -309,7 +309,7 @@ const ShopLeft = () => {
                   <input
                     type="checkbox"
                     id="1Star"
-                    className="checked:bg-[#00B207] mr-3 h-5 w-5 checkbox-rating text-[#00B207] "
+                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="1Star" className="flex items-center gap-2">
                     <span className="flex items-center gap-2 text-orange-500 text-xl">
@@ -339,7 +339,7 @@ const ShopLeft = () => {
             <DisclosurePanel>
               <div className="grid grid-cols-3 gap-2">
                 <button className="btn rounded-[43px]">Healthy</button>
-                <button className="btn rounded-[43px] bg-[#00b207] text-white">
+                <button className="btn rounded-[43px] bg-[#DC2626] text-white">
                   Low fat
                 </button>
                 <button className="btn rounded-[43px]">Vegetarian</button>
@@ -372,7 +372,7 @@ const ShopLeft = () => {
               <span className=" text-[#FF8A00]">79%</span>Discount
             </h3>
             <p className="text-center">on your first order</p>
-            <button className="text-[#00B207] font-bold flex items-center gap-2">
+            <button className="text-[#DC2626] font-bold flex items-center gap-2">
               Shop Now <GrLinkNext />
             </button>
           </div>
@@ -384,7 +384,7 @@ const ShopLeft = () => {
         <h3 className="text-xl font-semibold mt-6 mb-4">Sale Products</h3>
 
         <div className="group mb-4">
-          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#2C742F]">
+          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
             <img
               className="w-[40%] h-full"
               src={discountProduct}
@@ -392,7 +392,7 @@ const ShopLeft = () => {
             />
             <div className="w-full ">
               {" "}
-              <h4 className="font-semibold group-hover:text-[#2C742F]">
+              <h4 className="font-semibold group-hover:text-[#991B1B]">
                 Red Capsicum
               </h4>
               <h3 className="text-lg font-bold">
@@ -406,7 +406,7 @@ const ShopLeft = () => {
           </div>
         </div>
         <div className="group mb-4">
-          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#2C742F]">
+          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
             <img
               className="w-[40%] h-full"
               src={discountProduct}
@@ -414,7 +414,7 @@ const ShopLeft = () => {
             />
             <div className="w-full ">
               {" "}
-              <h4 className="font-semibold group-hover:text-[#2C742F]">
+              <h4 className="font-semibold group-hover:text-[#991B1B]">
                 Red Capsicum
               </h4>
               <h3 className="text-lg font-bold">
@@ -428,7 +428,7 @@ const ShopLeft = () => {
           </div>
         </div>
         <div className="group mb-4">
-          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#2C742F]">
+          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
             <img
               className="w-[40%] h-full"
               src={discountProduct}
@@ -436,7 +436,7 @@ const ShopLeft = () => {
             />
             <div className="w-full ">
               {" "}
-              <h4 className="font-semibold group-hover:text-[#2C742F]">
+              <h4 className="font-semibold group-hover:text-[#991B1B]">
                 Red Capsicum
               </h4>
               <h3 className="text-lg font-bold">

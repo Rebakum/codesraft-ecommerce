@@ -1,42 +1,51 @@
+import promo1 from "../../assets/home-assets/banner/bannar-06.jpg";
+import promo2 from "../../assets/home-assets/banner/bannar-05.jpg";
 const promos = [
   {
     id: 1,
     small: "LIMITED TIME",
     title: "30% OFF",
     subtitle: "All Single Origin Beans",
-    bgFrom: "from-amber-700",
-    bgTo: "to-amber-900",
+    bgFrom: "from-red-700",
+    image: promo1,
   },
   {
     id: 2,
     small: "BREW DEAL",
     title: "Starter Kit Bundle",
     subtitle: "Beans + French Press + Grinder",
-    bgFrom: "from-orange-500",
-    bgTo: "to-amber-700",
+    bgFrom: "from-red-500",
+    image: promo2,
+    
   },
 ];
 
 const PromoCard = () => {
   return (
-    <div className="flex flex-col gap-4 h-full">
+    <div className="flex flex-col h-full gap-4">
       {promos.map((promo) => (
         <div
           key={promo.id}
-          className={`relative flex-1 rounded-2xl overflow-hidden cursor-pointer bg-gradient-to-br ${promo.bgFrom} ${promo.bgTo}`}
+          className={`relative flex-1 rounded-2xl overflow-hidden cursor-pointer bg-gradient-to-r ${promo.bgFrom} to-transparent group-hover:from-red-600 transition-all`}
+          img={promo.image}
+          style={{
+            backgroundImage: `url(${promo.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
-          <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full" />
-          <div className="absolute -left-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full" />
+          <div className="absolute w-32 h-32 rounded-full -right-10 -top-10 bg-white/10" />
+          <div className="absolute w-24 h-24 rounded-full -left-6 -bottom-6 bg-white/10" />
 
-          <div className="relative z-10 h-full p-8 flex flex-col justify-center items-center text-center">
-            <p className="text-white/80 font-semibold mb-2 text-sm uppercase tracking-wider">
+          <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
+            <p className="mb-2 text-sm font-semibold tracking-wider uppercase text-white/80">
               {promo.small}
             </p>
-            <h2 className="text-white font-bold text-3xl leading-tight" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="text-3xl font-bold leading-tight text-red-500" style={{ fontFamily: "Georgia, serif" }}>
               {promo.title}
             </h2>
             {promo.subtitle && (
-              <p className="text-white/70 mt-2 text-base">
+              <p className="mt-2 text-base text-white/70">
                 {promo.subtitle}
               </p>
             )}

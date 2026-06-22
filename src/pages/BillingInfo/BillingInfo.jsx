@@ -1,7 +1,7 @@
-import Breadcrumbs from "../../assets/wishlist/Breadcrumbs.png";
 import greenCapsicum from "../../assets/wishlist/green capsicum.png";
 import redCapsicum from "../../assets/wishlist/red capsicum.png";
-import Nav_Banner from "../../Shared/Nav-Banner/Nav_Banner";
+import Nav_Banner from "../Shared/Nav_Banner";
+
 
 const BillingInfo = () => {
     return (
@@ -137,7 +137,7 @@ const BillingInfo = () => {
                                     <span className="ml-2">Amazon Pay</span>
                                 </label>
                             </div>
-                            <button className="w-full p-2 font-bold text-white bg-green-500 rounded-full hover:bg-gray-200 hover:text-green-500">Place Order</button>
+                            <button className="w-full p-2 font-bold text-white bg-red-500 rounded-full hover:bg-gray-200 hover:text-red-500">Place Order</button>
                         </div>
                     </div>
                 </div>

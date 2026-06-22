@@ -1,6 +1,5 @@
-import Breadcrumbs from '../../assets/wishlist/Breadcrumbs.png';
-import greenCapsicum from '../../assets/wishlist/green capsicum.png';
-import redCapsicum from '../../assets/wishlist/red capsicum.png';
+import greenCapsicum from '../../assets/home-assets/banner/coffe03.webp';
+import redCapsicum from '../../assets/home-assets/banner/coffe01.webp';
 import Nav_Banner from '../../Shared/Nav-Banner/Nav_Banner';
 
 
@@ -48,11 +47,11 @@ const WishList = () => {
                                 </td>
 
                                 <td>
-                                    <button className="text-green-500 bg-green-100 btn-sm">In Stock</button>
+                                    <button className="text-red-500 bg-red-100 btn-sm">In Stock</button>
                                     <button className="hidden text-red-500 bg-red-100 btn-sm">Out of Stock</button>
                                 </td>
                                 <td>
-                                    <button className="text-white bg-green-500 rounded-full btn-sm hover:text-gray-600 hover:bg-gray-200">
+                                    <button className="text-white bg-red-500 rounded-full btn-sm hover:text-gray-600 hover:bg-gray-200">
                                         Add to Cart
                                     </button>
                                 </td>
@@ -81,11 +80,11 @@ const WishList = () => {
                                 </td>
 
                                 <td>
-                                    <button className="hidden text-green-500 bg-green-100 btn-sm">In Stock</button>
+                                    <button className="hidden text-red-500 bg-red-100 btn-sm">In Stock</button>
                                     <button className="text-red-500 bg-red-100 btn-sm">Out of Stock</button>
                                 </td>
                                 <td>
-                                    <button className="text-white bg-green-500 rounded-full btn-sm hover:text-gray-600 hover:bg-gray-200">
+                                    <button className="text-white bg-red-500 rounded-full btn-sm hover:text-gray-600 hover:bg-gray-200">
                                         Add to Cart
                                     </button>
                                 </td>

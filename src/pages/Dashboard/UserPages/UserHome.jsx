@@ -10,7 +10,7 @@ const UserHome = () => {
           />
           <h4 className="text-xl font-semibold text-center">Dianne Russell</h4>
           <p className="text-center">Customer</p>
-          <button className="text-[#00B207] font-bold mt-2">
+          <button className="text-[#DC2626] font-bold mt-2">
             Edit Profile
           </button>
         </div>
@@ -22,7 +22,7 @@ const UserHome = () => {
           </p>
           <p className="text-gray mt-2">dainne.russell@gmail.com</p>
           <p className="text-gray mt-2">(+88) 555-0110</p>
-          <button className="text-[#00B207] font-bold mt-4">
+          <button className="text-[#DC2626] font-bold mt-4">
             Edit Address
           </button>
         </div>
@@ -30,7 +30,7 @@ const UserHome = () => {
       <div className="border shadow rounded-2xl w-full  mt-6">
         <div className="flex justify-between items-center px-6">
           <h4 className=" text-xl font-semibold  "> Recent Order History</h4>
-          <button className="text-[#00B207] font-bold mt-4">View All</button>
+          <button className="text-[#DC2626] font-bold mt-4">View All</button>
         </div>
         <div className="my-4 ">
           <div className="overflow-x-scroll">
@@ -53,7 +53,7 @@ const UserHome = () => {
 
                   <td>Processing</td>
                   <td>
-                    <button className="text-[#00B207] font-bold mt-4">
+                    <button className="text-[#DC2626] font-bold mt-4">
                       View Details
                     </button>
                   </td>
@@ -65,7 +65,7 @@ const UserHome = () => {
 
                   <td>on the way</td>
                   <td>
-                    <button className="text-[#00B207] font-bold mt-4">
+                    <button className="text-[#DC2626] font-bold mt-4">
                       View Details
                     </button>
                   </td>
@@ -77,7 +77,7 @@ const UserHome = () => {
 
                   <td>Completed</td>
                   <td>
-                    <button className="text-[#00B207] font-bold mt-4">
+                    <button className="text-[#DC2626] font-bold mt-4">
                       View Details
                     </button>
                   </td>

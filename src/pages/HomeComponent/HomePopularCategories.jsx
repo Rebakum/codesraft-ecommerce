@@ -22,7 +22,7 @@ const HomePopularCategories = () => {
     <section className="py-10">
       {/* Section Header */}
       <div className="max-w-3xl mx-auto mb-10 text-center">
-        <span className="text-sm font-semibold tracking-wider uppercase text-amber-700">
+        <span className="text-sm font-semibold tracking-wider uppercase text-red-700">
           Explore Our Collection
         </span>
 
@@ -51,13 +51,13 @@ const HomePopularCategories = () => {
           return (
             <div
               key={cat.name}
-              className="flex flex-col items-center py-6 transition-all bg-white border cursor-pointer border-amber-100 rounded-2xl hover:border-amber-600 hover:shadow-lg hover:text-amber-700 group"
+              className="flex flex-col items-center py-6 transition-all bg-white border cursor-pointer border-red-100 rounded-2xl hover:border-red-600 hover:shadow-lg hover:text-red-700 group"
             >
-              <span className="flex items-center justify-center mb-3 transition-colors rounded-full w-14 h-14 bg-amber-50 group-hover:bg-amber-100">
-                <Icon className="text-2xl text-amber-700" />
+              <span className="flex items-center justify-center mb-3 transition-colors rounded-full w-14 h-14 bg-red-50 group-hover:bg-red-100">
+                <Icon className="text-2xl text-red-700" />
               </span>
 
-              <p className="text-sm font-semibold text-center text-gray-600 group-hover:text-amber-700">{cat.name}</p>
+              <p className="text-sm font-semibold text-center text-gray-600 group-hover:text-red-700">{cat.name}</p>
             </div>
           );
         })}
@@ -65,7 +65,7 @@ const HomePopularCategories = () => {
       <div className="flex items-center justify-center mt-10 mb-8">
         
 
-        <button className="flex items-center gap-2 text-sm font-semibold text-amber-700 hover:underline">
+        <button className="flex items-center gap-2 text-sm font-semibold text-red-700 hover:underline">
           View All <FaArrowRight />
         </button>
       </div>

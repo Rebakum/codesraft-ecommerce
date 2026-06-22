@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../../Shared/Footer/Footer";
-import Nav_Banner from "../../Shared/Nav-Banner/Nav_Banner";
-import NavBar from "../../Shared/Navbar/NavBar";
 
 
 const Error = () => {
@@ -16,7 +13,7 @@ const Error = () => {
                 <p className="text-[#808080] text-base">
                     Ut consequat ac tortor eu vehicula. Aenean accumsan purus eros. <br />   Maecenas sagittis tortor at metus mollis
                 </p>
-                <Link to="/" className="btn bg-[#00B207] text-white   rounded-full">Back to Home</Link>
+                <Link to="/" className="btn bg-[#DC2626] text-white   rounded-full">Back to Home</Link>
             </div>
         </div>
 

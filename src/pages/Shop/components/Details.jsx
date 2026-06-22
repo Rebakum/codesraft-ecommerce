@@ -57,7 +57,7 @@ const Details = () => {
           <h1 className="text-3xl font-bold inline-block mr-3">
             Dark Roast Blend{" "}
           </h1>
-          <button className="btn btn-sm text-[#2C742F] bg-[#20B52633]">
+          <button className="btn btn-sm text-[#991B1B] bg-[#DC262633]">
             In Stock
           </button>
         </div>
@@ -77,7 +77,7 @@ const Details = () => {
           <p className="text-xl font-semibold text-[#B3B3B3] line-through">
             $<span>48.00</span>
           </p>
-          <p className="text-xl font-semibold text-[#2C742F]">
+          <p className="text-xl font-semibold text-[#991B1B]">
             $<span>17.28</span>
           </p>
           <button className="btn btn-sm text-[#EA4B48] bg-[#EA4B481A]">
@@ -101,16 +101,16 @@ const Details = () => {
           <div className="flex items-center gap-2">
             <h5 className="text-xl font-bold">Share item:</h5>
             <div>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#00B207] group">
+              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
                 <FaFacebook className="text-xl text-black  group-hover:text-white" />
               </button>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#00B207] group">
+              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
                 <FaTwitter className="text-xl text-black  group-hover:text-white" />
               </button>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#00B207] group">
+              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
                 <FaPinterest className="text-xl text-black  group-hover:text-white" />
               </button>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#00B207] group">
+              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
                 <FaInstagram className="text-xl text-black  group-hover:text-white" />
               </button>
             </div>
@@ -126,7 +126,7 @@ const Details = () => {
             <div className="flex justify-center items-center gap-2 w-36 border p-1 rounded-[43px] ">
               <button
                 onClick={handleRemoveProduct}
-                className="text-lg btn bg-gray-200 btn-circle btn-sm outline-none hover:text-white hover:bg-[#128d16]"
+                className="text-lg btn bg-gray-200 btn-circle btn-sm outline-none hover:text-white hover:bg-[#991B1B]"
                 disabled={quantity <= 1 ? true : false}
               >
                 <TiMinus className="font-thin" />
@@ -134,14 +134,14 @@ const Details = () => {
               <span className="text-sm font-semibold">{quantity}</span>
               <button
                 onClick={handleAddProduct}
-                className="text-lg btn bg-gray-200 btn-circle btn-sm outline-none hover:bg-[#128d16] hover:text-white"
+                className="text-lg btn bg-gray-200 btn-circle btn-sm outline-none hover:bg-[#991B1B] hover:text-white"
               >
                 <TiPlus className="font-thin" />
               </button>
             </div>
 
             <div className="w-full">
-              <button className=" btn flex items-center w-full justify-center bg-[#00B207] text-white hover:bg-[#128d16] rounded-[43px]">
+              <button className=" btn flex items-center w-full justify-center bg-[#DC2626] text-white hover:bg-[#991B1B] rounded-[43px]">
                 Add to Cart <HiOutlineShoppingBag />
               </button>
             </div>
@@ -150,13 +150,13 @@ const Details = () => {
                 data-tooltip-id="wishlist"
                 data-tooltip-content="Add To Wishlist"
                 data-tooltip-place="top"
-                className="rounded-full mb-3 text-[#2C742F]  p-3 border !bg-[#20B526] hover:bg-[#128d16]  flex justify-center items-center outline-none hover:text-white"
+                className="rounded-full mb-3 text-[#991B1B]  p-3 border !bg-[#DC2626] hover:bg-[#991B1B]  flex justify-center items-center outline-none hover:text-white"
               >
                 <FaRegHeart className="text-xl" />
               </button>
               <Tooltip
                 id="wishlist"
-                className="bg-[#00B207]  text-white text-sm "
+                className="bg-[#DC2626]  text-white text-sm "
               />
             </div>
           </div>

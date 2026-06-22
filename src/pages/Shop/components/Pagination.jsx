@@ -38,8 +38,8 @@ const Pagination = () => {
                   key={page}
                   className={
                     currentPage === page
-                      ? "rounded-full text-xl w-16 h-16 mb-3 mr-2  text-white  p-4 border bg-[#00B207] hover:bg-[#134e15]  flex justify-center items-center outline-none"
-                      : "rounded-full text-xl w-16 h-16 mb-3 mr-2  text-black  p-4 border  flex justify-center items-center outline-none hover:bg-[#00B207]  hover:text-white  "
+                      ? "rounded-full text-xl w-16 h-16 mb-3 mr-2  text-white  p-4 border bg-[#DC2626] hover:bg-[#991B1B]  flex justify-center items-center outline-none"
+                      : "rounded-full text-xl w-16 h-16 mb-3 mr-2  text-black  p-4 border  flex justify-center items-center outline-none hover:bg-[#DC2626]  hover:text-white  "
                   }
                 >
                   {page}

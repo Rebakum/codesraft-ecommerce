@@ -1,6 +1,6 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../Layout/MainLayout";
+
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Shop from "../pages/Shop/Shop";
@@ -13,11 +13,10 @@ import BillingInfo from "../pages/BillingInfo/BillingInfo";
 import ContactPage from "../pages/ContactPage/contactPage";
 import ShoppingCart from "../pages/ShoppingCart/ShoppingCart";
 import WishList from "../pages/WishList/WishList";
-import Error from "../pages/Error/Error";
 import LogIn from "../pages/LogIn/LogIn";
 import Register from "../pages/Register/Register";
-
-
+import Error from "../pages/Error/Error";
+import MainLayout from "../Layout/MainLayout";
 
 
 
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <Error></Error>,
+    errorElement: <Error/>,
 
     children: [
       {
@@ -54,7 +53,6 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-
       {
         path: '/login',
         element: <LogIn/>
@@ -70,7 +68,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/contact-us",
+        path: "/contact",
         element: <ContactPage />,
       },
 

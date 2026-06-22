@@ -1,7 +1,7 @@
 import { IoHomeOutline } from "react-icons/io5";
 import { LiaGreaterThanSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
-import bannerBg from "../../assets/home-assets/banner/bannar-01.jpg";
+import bannerBg from "../../assets/home-assets/banner/bannar-06.jpg";
 
 const Nav_Banner = ({ name, path, nameS, pathS = null }) => {
   return (
@@ -18,12 +18,12 @@ const Nav_Banner = ({ name, path, nameS, pathS = null }) => {
         <div className="flex items-center gap-2 text-sm md:text-lg">
           <Link
             to="/"
-            className="text-white hover:text-red-400 transition-colors"
+            className="text-white transition-colors hover:text-amber-400"
           >
             <IoHomeOutline className="text-xl" />
           </Link>
 
-          <LiaGreaterThanSolid className="text-white text-xs" />
+          <LiaGreaterThanSolid className="text-xs text-white" />
 
           <Link
             to={path}
@@ -36,11 +36,11 @@ const Nav_Banner = ({ name, path, nameS, pathS = null }) => {
 
           {pathS && (
             <>
-              <LiaGreaterThanSolid className="text-white text-xs" />
+              <LiaGreaterThanSolid className="text-xs text-white" />
 
               <Link
                 to={pathS}
-                className="text-red-500 hover:text-red-400 transition-colors"
+                className="text-red-500 transition-colors hover:text-red-400"
               >
                 {nameS}
               </Link>
