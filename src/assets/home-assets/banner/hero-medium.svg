@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <rect width="900" height="450" fill="#8B5E3C"/>
+  <g transform="translate(60,40)" fill="#fff">
+    <circle cx="120" cy="110" r="80" fill="#3a2a25"/>
+    <path d="M210 40c6-10 6-18 0-28" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="260" y="120" font-family="Verdana" font-size="44" font-weight="700">Coffee Brand</text>
+    <text x="260" y="160" font-family="Verdana" font-size="18">Small batch roasted</text>
+  </g>
+</svg>

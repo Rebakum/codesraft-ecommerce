@@ -1,0 +1,102 @@
+[
+    {
+        "productId": "1",
+        "name": "Ethiopia Roast",
+        "productPic": "https://i.postimg.cc/cC83VbDn/Product-Image.png",
+        "regularPrice": "20.99",
+        "offerPrice": "14.99",
+        "ratings": "4",
+        "discount": "50",
+        "categories": "Single Origin"
+    },
+    {
+        "productId": "2",
+        "name": "Colombian Espresso",
+        "productPic": "https://i.postimg.cc/QN5kYFvn/Product-Image-1.png",
+        "regularPrice": "20.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Single Origin"
+    },
+    {
+        "productId": "3",
+        "name": "Dark Roast Blend",
+        "productPic": "https://i.postimg.cc/85vWYYXr/Product-Image-9.png",
+        "regularPrice": "12.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Blends"
+    },
+    {
+        "productId": "4",
+        "name": "Cold Brew Kit",
+        "productPic": "https://i.postimg.cc/hPsmNTsM/Product-Image-5.png",
+        "regularPrice": "12.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Cold Brew"
+    },
+    {
+        "productId": "5",
+        "name": "French Press Set",
+        "productPic": "https://i.postimg.cc/HLgC58DD/Product-Image-7.png",
+        "regularPrice": "34.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Coffee Gear"
+    },
+    {
+        "productId": "6",
+        "name": "Organic Beans",
+        "productPic": "https://i.postimg.cc/7PJ8sr1Z/Product-Image-3.png",
+        "regularPrice": "20.00",
+        "offerPrice": "14.00",
+        "ratings": "4",
+        "discount": "20",
+        "categories": "Organic Beans"
+    },
+    {
+        "productId": "7",
+        "name": "Coffee Pods",
+        "productPic": "https://i.postimg.cc/nhJ18B6P/Image.png",
+        "regularPrice": "20.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Coffee Pods"
+    },
+    {
+        "productId": "8",
+        "name": "Latte Art Tools",
+        "productPic": "https://i.postimg.cc/DzmJRzyN/Product-Image-4.png",
+        "regularPrice": "12.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Coffee Gear"
+    },
+    {
+        "productId": "9",
+        "name": "Vanilla Cold Brew",
+        "productPic": "https://i.postimg.cc/nrfXsYY8/Product-Image-6.png",
+        "regularPrice": "20.99",
+        "offerPrice": "9.00",
+        "ratings": "4",
+        "discount": "50",
+        "categories": "Cold Brew"
+    },
+    {
+        "productId": "10",
+        "name": "Caramel Drip Blend",
+        "productPic": "https://i.postimg.cc/yYBJsj8c/Product-Image-8.png",
+        "regularPrice": "34.00",
+        "offerPrice": "",
+        "ratings": "4",
+        "discount": "",
+        "categories": "Blends"
+    }
+]

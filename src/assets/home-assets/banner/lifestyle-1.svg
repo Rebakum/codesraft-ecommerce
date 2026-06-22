@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#CFA77A"/>
+  <g transform="translate(40,30)" fill="#3b2a24">
+    <rect x="20" y="60" width="180" height="120" rx="12" fill="#5a3f34"/>
+    <circle cx="300" cy="120" r="80" fill="#3b2a24"/>
+    <text x="420" y="120" font-family="sans-serif" font-size="36" fill="#2b1f1a">Sip the Moment</text>
+  </g>
+</svg>

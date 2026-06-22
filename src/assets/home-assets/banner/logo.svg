@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <rect width="400" height="120" fill="none"/>
+  <g transform="translate(10,10)">
+    <rect x="0" y="10" width="80" height="80" rx="12" fill="#3b2a24"/>
+    <circle cx="40" cy="50" r="28" fill="#c69c6d"/>
+    <text x="110" y="70" font-family="Georgia, serif" font-size="36" fill="#3b2a24" font-weight="700">Coffee Brand</text>
+  </g>
+</svg>
