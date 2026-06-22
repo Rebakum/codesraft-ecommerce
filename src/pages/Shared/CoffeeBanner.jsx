@@ -1,4 +1,4 @@
-import bannerImage from "../../assets/home-assets/banner/coffee-banner.png";
+import bannerImage from "../../assets/home-assets/banner/bannar-01.jpg";
 
 const CoffeeBanne
 r = () => {
@@ -26,15 +26,15 @@ r = () => {
 
         {/* Decorative Coffee Beans */}
         <img
-          src="/image/bean.png"
+          src={bannerImage}
           alt=""
-          className="absolute w-16 top-2 left-1/3 opacity-80"
+          className="absolute w-16 top-2 left-1/3 opacity-80 hidden"
         />
 
         <img
-          src="/image/bean.png"
+          src={bannerImage}
           alt=""
-          className="absolute w-20 rotate-45 bottom-4 left-6 opacity-80"
+          className="absolute w-20 rotate-45 bottom-4 left-6 opacity-80 hidden"
         />
       </div>
     </section>

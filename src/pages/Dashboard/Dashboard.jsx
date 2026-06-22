@@ -1,12 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 
-import ShopBanner from "../Shop/components/ShopBanner";
+import Nav_Banner from "../../Shared/Nav-Banner/Nav_Banner";
 import LargeDeviceMenu from "./DashboardMenu/LargeDeviceMenu";
 const Dashboard = () => {
   return (
     <div className="">
       <div>
-        <ShopBanner />
+        <Nav_Banner name="Dashboard" path="/dashboard" />
       </div>
       <div className="flex items-start gap-5 h-screen max-w-7xl container mx-auto mt-10 ">
         <LargeDeviceMenu />

@@ -1,176 +1,147 @@
-import React from "react";
+import { useState } from "react";
 import { TiMinus, TiPlus } from "react-icons/ti";
+import { FaStar, FaRegHeart } from "react-icons/fa";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import "@smastrom/react-rating/style.css";
-import { useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaPinterest,
-  FaRegHeart,
-  FaStar,
-  FaTwitter,
-} from "react-icons/fa";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { useCart } from "../../../Cart/CartContext";
 
-const Details = () => {
+const Details = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
-  const handleAddProduct = () => {
-    setQuantity(quantity + 1);
-  };
-  const handleRemoveProduct = () => {
-    setQuantity(quantity - 1);
-  };
+  const images = [product.image];
+
+  const hasDiscount = product.offerPrice && product.discount > 0;
+  const price = hasDiscount ? product.offerPrice : product.regularPrice;
 
   return (
-    <div className="flex flex-col md:flex-row  justify-between items-start gap-5">
-      <Carousel className="h-[400px] pl-24 w-full md:w-[50%]">
-        <div className="h-[400px] border">
+    <div className="flex flex-col gap-8 md:flex-row">
+      {/* Image Gallery */}
+      <div className="w-full md:w-1/2">
+        <div className="overflow-hidden border rounded-lg">
           <img
-            src="./image/Tomato.png"
-            className="w-full h-full p-1"
-            alt="Products"
+            src={images[selectedImage]}
+            alt={product.name}
+            className="object-cover w-full h-[400px]"
           />
         </div>
-        <div className="h-[400px] border">
-          <img
-            src="./image/Tomato.png"
-            className="w-full h-full p-1"
-            alt="Products"
-          />
-        </div>
-        <div className="h-[400px] border">
-          <img
-            src="./image/Tomato.png"
-            className="w-full h-full p-1"
-            alt="Products"
-          />
-        </div>
-      </Carousel>
+      </div>
 
-      <div className="w-full md:w-[50%]">
-        <div>
-          <h1 className="text-3xl font-bold inline-block mr-3">
-            Dark Roast Blend{" "}
-          </h1>
-          <button className="btn btn-sm text-[#991B1B] bg-[#DC262633]">
-            In Stock
-          </button>
+      {/* Product Info */}
+      <div className="w-full md:w-1/2">
+        {/* Title & Stock */}
+        <div className="flex items-center gap-3">
+          <h1 className="text-3xl font-bold">{product.name}</h1>
+          <span className="px-3 py-1 text-sm rounded-full bg-red-100 text-red-700">
+            {product.stock > 0 ? "In Stock" : "Out of Stock"}
+          </span>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="flex items-center gap-1 text-orange-500 text-sm">
-            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-          </span>{" "}
-          <p className="text-sm">
-            {" "}
-            <span> 4</span> Review
-          </p>
-          <p className="text-sm font-semibold">
-            SKU: <span className="font-normal"> 2,51,594</span>
-          </p>
-        </div>
-        <div className="mt-3 flex items-center gap-2">
-          <p className="text-xl font-semibold text-[#B3B3B3] line-through">
-            $<span>48.00</span>
-          </p>
-          <p className="text-xl font-semibold text-[#991B1B]">
-            $<span>17.28</span>
-          </p>
-          <button className="btn btn-sm text-[#EA4B48] bg-[#EA4B481A]">
-            <span> 64</span> % Off
-          </button>
-        </div>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5  mt-4">
-          <div className="h-16 flex items-center gap-2 ">
-            <p>Brand:</p>
-            <div className="h-full flex flex-col items-center justify-center border  p-3 rounded-md">
-              <div className="h-4 w-10 ">
-                <img
-                  className="h-full w-full"
-                  src="/image/Brand.png"
-                  alt="Brand-Img"
-                />
-              </div>
-              <p className="font-dancingScript">farmary</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <h5 className="text-xl font-bold">Share item:</h5>
-            <div>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
-                <FaFacebook className="text-xl text-black  group-hover:text-white" />
-              </button>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
-                <FaTwitter className="text-xl text-black  group-hover:text-white" />
-              </button>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
-                <FaPinterest className="text-xl text-black  group-hover:text-white" />
-              </button>
-              <button className="btn btn-circle p-2 bg-white hover:bg-[#DC2626] group">
-                <FaInstagram className="text-xl text-black  group-hover:text-white" />
-              </button>
-            </div>
-          </div>
-        </div>
-        <div>
-          <p className="mt-3">
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-            per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec,
-            ultrices et ipsum. Nulla varius magna a consequat pulvinar.{" "}
-          </p>
-          <div className="w-full flex justify-between items-center gap-3 mt-4">
-            <div className="flex justify-center items-center gap-2 w-36 border p-1 rounded-[43px] ">
-              <button
-                onClick={handleRemoveProduct}
-                className="text-lg btn bg-gray-200 btn-circle btn-sm outline-none hover:text-white hover:bg-[#991B1B]"
-                disabled={quantity <= 1 ? true : false}
-              >
-                <TiMinus className="font-thin" />
-              </button>
-              <span className="text-sm font-semibold">{quantity}</span>
-              <button
-                onClick={handleAddProduct}
-                className="text-lg btn bg-gray-200 btn-circle btn-sm outline-none hover:bg-[#991B1B] hover:text-white"
-              >
-                <TiPlus className="font-thin" />
-              </button>
-            </div>
 
-            <div className="w-full">
-              <button className=" btn flex items-center w-full justify-center bg-[#DC2626] text-white hover:bg-[#991B1B] rounded-[43px]">
-                Add to Cart <HiOutlineShoppingBag />
-              </button>
-            </div>
-            <div>
-              <button
-                data-tooltip-id="wishlist"
-                data-tooltip-content="Add To Wishlist"
-                data-tooltip-place="top"
-                className="rounded-full mb-3 text-[#991B1B]  p-3 border !bg-[#DC2626] hover:bg-[#991B1B]  flex justify-center items-center outline-none hover:text-white"
-              >
-                <FaRegHeart className="text-xl" />
-              </button>
-              <Tooltip
-                id="wishlist"
-                className="bg-[#DC2626]  text-white text-sm "
+        {/* Rating & SKU */}
+        <div className="flex items-center gap-3 mt-2">
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <FaStar
+                key={i}
+                className={i < product.rating ? "text-yellow-400" : "text-gray-300"}
               />
-            </div>
+            ))}
           </div>
+          <span className="text-sm text-gray-500">
+            {product.rating} Review{product.rating !== 1 && "s"}
+          </span>
+          <span className="text-sm text-gray-500">
+            SKU: {product.sku}
+          </span>
         </div>
-        <div className="mt-3">
-          <h4 className="font-medium">
-            Category: <span className="text-gray font-normal">Cold Brew</span>
-          </h4>
-          <h4 className="font-medium">
-            Tag:{" "}
-            <span className="text-gray font-normal">
-              Coffee Beans Fresh Roast Smooth Flavor
+
+        {/* Price */}
+        <div className="flex items-center gap-3 mt-4">
+          {hasDiscount && (
+            <span className="text-xl font-semibold text-gray-400 line-through">
+              ${product.regularPrice.toFixed(2)}
             </span>
-          </h4>
+          )}
+          <span className="text-2xl font-bold text-red-600">
+            ${price.toFixed(2)}
+          </span>
+          {hasDiscount && (
+            <span className="px-3 py-1 text-sm text-red-600 bg-red-100 rounded-full">
+              {product.discount}% Off
+            </span>
+          )}
+        </div>
+
+        {/* Description */}
+        <p className="mt-4 text-gray-600 dark:text-gray-400">
+          {product.description}
+        </p>
+
+        {/* Features */}
+        <div className="mt-4">
+          <h3 className="mb-2 font-semibold">Key Features:</h3>
+          <ul className="space-y-1">
+            {product.features.map((feature, i) => (
+              <li key={i} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Quantity & Add to Cart */}
+        <div className="flex flex-col gap-4 mt-6 sm:flex-row sm:items-center">
+          {/* Quantity Selector */}
+          <div className="flex items-center gap-3 border rounded-full w-fit">
+            <button
+              onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+              disabled={quantity <= 1}
+              className="flex items-center justify-center w-10 h-10 text-lg transition-colors rounded-full hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <TiMinus />
+            </button>
+            <span className="w-8 font-semibold text-center">{quantity}</span>
+            <button
+              onClick={() => setQuantity((q) => q + 1)}
+              className="flex items-center justify-center w-10 h-10 text-lg transition-colors rounded-full hover:bg-gray-100"
+            >
+              <TiPlus />
+            </button>
+          </div>
+
+          {/* Add to Cart */}
+          <button
+            onClick={() => {
+              for (let i = 0; i < quantity; i++) {
+                addToCart(product);
+              }
+              setQuantity(1);
+            }}
+            className="flex items-center justify-center gap-2 px-8 py-3 text-white transition-colors bg-red-600 rounded-full hover:bg-red-700"
+          >
+            Add to Cart
+            <HiOutlineShoppingBag className="text-lg" />
+          </button>
+
+          {/* Wishlist */}
+          <button
+            data-tooltip-id="wishlist"
+            data-tooltip-content="Add To Wishlist"
+            className="flex items-center justify-center w-12 h-12 text-red-600 transition-colors bg-red-100 rounded-full hover:bg-red-600 hover:text-white"
+          >
+            <FaRegHeart className="text-xl" />
+          </button>
+          <Tooltip id="wishlist" className="bg-red-600 text-white text-sm" />
+        </div>
+
+        {/* Category & Tags */}
+        <div className="mt-4 text-sm">
+          <p>
+            <span className="font-medium">Category:</span>{" "}
+            <span className="text-gray-500">{product.category}</span>
+          </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import greenCapsicum from "../../assets/wishlist/green capsicum.png";
-import redCapsicum from "../../assets/wishlist/red capsicum.png";
-import Nav_Banner from "../Shared/Nav_Banner";
+import greenCapsicum from "../../assets/home-assets/banner/coffe01.webp";
+import redCapsicum from "../../assets/home-assets/banner/coffee02.webp";
+import Nav_Banner from "../../Shared/Nav-Banner/Nav_Banner";
 
 
 const BillingInfo = () => {

@@ -1,144 +1,159 @@
-import { Link } from 'react-router-dom';
-import greenCapsicum from '../../assets/home-assets/banner/coffe01.webp';
-import redCapsicum from '../../assets/home-assets/banner/coffee02.webp';
-import Nav_Banner from '../../Shared/Nav-Banner/Nav_Banner';
+import { Link } from "react-router-dom";
+import Nav_Banner from "../../Shared/Nav-Banner/Nav_Banner";
 import { RxCross2 } from "react-icons/rx";
-
+import { useCart } from "../../Cart/CartContext";
 
 const ShoppingCart = () => {
-    return (
-        <>
-            <Nav_Banner name={"Shopping Cart "} />
-            <div className="mx-auto all-container">
-                <h1 className="mt-5 text-3xl font-bold text-center">My Shopping Cart</h1>
-                <div className='flex flex-col lg:gap-5 lg:p-10 lg:flex-row'>
+  const {
+    cart,
+    increaseQuantity,
+    decreaseQuantity,
+    removeFromCart,
+    calculateTotal,
+  } = useCart();
 
-                    {/* left side */}
-                    <div className="flex-1 overflow-x-auto">
-                        <table className="table">
-                            {/* head */}
-                            <thead>
-                                <tr className='border border-gray-300'>
-                                    <th>PRODUCT</th>
-                                    <th></th>
-                                    <th>PRICE</th>
-                                    <th>QUANTITY</th>
-                                    <th>SUBTOTAL</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/* row 1 */}
-                                <tr className='border border-gray-300'>
-                                    <td>
-                                        <div className="flex items-center gap-3">
-                                            <div className="avatar">
-                                                <div className="w-12 h-12 mask mask-squircle">
-                                                    <img
-                                                        src={greenCapsicum}
-                                                        alt="greenCapsicumt" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">Green Capsicums</div>
-                                            </div>
-                                        </div>
-                                    </td>
+  const total = calculateTotal();
 
+  return (
+    <>
+      <Nav_Banner name="Shopping Cart" path="/shopping-cart" />
+      <div className="px-4 py-10 mx-auto all-container">
+        <h1 className="mb-8 text-3xl font-bold text-center">My Shopping Cart</h1>
 
-                                    <td></td>
-                                    <td>
-                                        $70.00
-                                    </td>
+        {cart.length === 0 ? (
+          <div className="flex flex-col items-center gap-4 py-20">
+            <p className="text-gray-500">Your cart is empty</p>
+            <Link
+              to="/shop"
+              className="px-6 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
+            >
+              Continue Shopping
+            </Link>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-5 lg:p-10 lg:flex-row">
+            {/* Left side - Cart Items */}
+            <div className="flex-1 overflow-x-auto">
+              <table className="w-full table">
+                <thead>
+                  <tr className="border border-gray-300">
+                    <th className="p-3 text-left">PRODUCT</th>
+                    <th className="p-3"></th>
+                    <th className="p-3 text-left">PRICE</th>
+                    <th className="p-3 text-center">QUANTITY</th>
+                    <th className="p-3 text-left">SUBTOTAL</th>
+                    <th className="p-3"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cart.map((item) => {
+                    const price = item.offerPrice || item.regularPrice;
+                    return (
+                      <tr key={item.id} className="border border-gray-300">
+                        <td className="p-3">
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="w-12 h-12 rounded object-cover"
+                            />
+                            <div className="font-bold">{item.name}</div>
+                          </div>
+                        </td>
+                        <td className="p-3"></td>
+                        <td className="p-3">${price.toFixed(2)}</td>
+                        <td className="p-3">
+                          <div className="flex items-center justify-center gap-3 p-2 border-2 rounded-full w-fit mx-auto">
+                            <button
+                              onClick={() => decreaseQuantity(item.id)}
+                              className="flex items-center justify-center w-6 h-6 text-sm font-bold rounded-full hover:bg-gray-100"
+                            >
+                              -
+                            </button>
+                            <h3 className="font-semibold">{item.quantity}</h3>
+                            <button
+                              onClick={() => increaseQuantity(item.id)}
+                              className="flex items-center justify-center w-6 h-6 text-sm font-bold rounded-full hover:bg-gray-100"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </td>
+                        <td className="p-3 font-semibold">
+                          ${(price * item.quantity).toFixed(2)}
+                        </td>
+                        <td className="p-3">
+                          <button
+                            onClick={() => removeFromCart(item.id)}
+                            className="flex items-center justify-center w-8 h-8 text-white bg-red-500 rounded-full hover:bg-red-600"
+                          >
+                            <RxCross2 />
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
 
-                                    <td>
-                                        <div className='flex items-center gap-3 p-2 border-2 rounded-full w-fit'>
-                                            <button className='btn btn-circle btn-xs'>-</button>
-                                            <h3 className='font-semibold'>5</h3>
-                                            <button className='btn btn-circle btn-xs'>+</button>
-
-
-                                        </div>
-
-                                    </td>
-                                    <td>
-
-                                        $70.00
-
-                                    </td>
-                                    <td>
-                                        <button className='btn btn-circle btn-sm btn-error'>
-                                            <RxCross2 />
-                                        </button>
-
-                                    </td>
-                                </tr>
-
-
-                            </tbody>
-
-                        </table>
-                        <div className='my-10 border rounded-lg'>
-                            <div className='flex items-center justify-between p-5'>
-
-                                <p className='text-xl font-bold text-black'>Coupon code </p>
-
-                                <label className="flex items-center w-3/4 pr-0 rounded-full input input-bordered">
-                                    <input type="text" className=" grow" placeholder="Entry coupon" />
-                                    <button className='bg-[#333333] btn text-white rounded-full '>Apply Coupon</button>
-                                </label>
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    {/* right side */}
-
-                    <div className="overflow-x-auto">
-                        <table className="table border border-gray-300">
-                            {/* head */}
-                            <thead>
-                                <tr className='border border-gray-300'>
-                                    <th>Cart Total</th>
-                                    <th></th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/* row 1 */}
-                                <tr className='border border-gray-300'>
-
-                                    <td>Sub Total</td>
-                                    <td>$84.00</td>
-
-                                </tr>
-                                {/* row 2 */}
-                                <tr className='border border-gray-300'>
-                                    <td>Shopping</td>
-                                    <td>free</td>
-                                </tr>
-                                {/* row 3 */}
-                                <tr className='border border-gray-300'>
-                                    <td>Total</td>
-                                    <td>$84.00</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                        <div className='flex items-center justify-center border border-gray-300'>
-
-                            <div className='flex items-center justify-center m-5'>
-                                <Link to="/billing-info"> <span className='w-full px-20 py-2 text-white bg-red-500 rounded-full hover:bg-gray-100 hover:text-red-500 '>Proceed to checkout</span></Link>
-                            </div>
-                        </div>
-
-                    </div>
+              {/* Coupon */}
+              <div className="my-10 border rounded-lg">
+                <div className="flex items-center justify-between p-5">
+                  <p className="text-xl font-bold">Coupon code</p>
+                  <label className="flex items-center w-3/4 gap-2 pr-0 rounded-full input input-bordered">
+                    <input
+                      type="text"
+                      className="grow"
+                      placeholder="Enter coupon"
+                    />
+                    <button className="px-4 py-2 text-white bg-black rounded-full hover:bg-gray-800">
+                      Apply Coupon
+                    </button>
+                  </label>
                 </div>
+              </div>
             </div>
-        </>
-    );
+
+            {/* Right side - Order Summary */}
+            <div className="w-full lg:w-[350px]">
+              <table className="w-full border border-gray-300">
+                <thead>
+                  <tr className="border border-gray-300">
+                    <th className="p-3 text-left">Cart Total</th>
+                    <th className="p-3"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border border-gray-300">
+                    <td className="p-3">Sub Total</td>
+                    <td className="p-3">${total.toFixed(2)}</td>
+                  </tr>
+                  <tr className="border border-gray-300">
+                    <td className="p-3">Shipping</td>
+                    <td className="p-3">Free</td>
+                  </tr>
+                  <tr className="border border-gray-300">
+                    <td className="p-3 font-bold">Total</td>
+                    <td className="p-3 font-bold">${total.toFixed(2)}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="flex items-center justify-center border border-gray-300">
+                <div className="my-5">
+                  <Link
+                    to="/billing-info"
+                    className="px-10 py-2 text-white bg-red-500 rounded-full hover:bg-red-600"
+                  >
+                    Proceed to Checkout
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
 };
 
 export default ShoppingCart;

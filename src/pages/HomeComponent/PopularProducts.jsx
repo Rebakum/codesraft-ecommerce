@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import coffe01 from "../../assets/home-assets/banner/coffe01.webp";
 import coffee02 from "../../assets/home-assets/banner/coffee02.webp";
@@ -103,9 +104,10 @@ const PopularProducts = () => {
       {/* Products */}
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
         {products.map((p) => (
-          <div
+          <Link
             key={p.id}
-            className="relative p-3 transition-all duration-300 bg-white border border-red-100 rounded-2xl hover:border-red-600 hover:shadow-xl group"
+            to={`/product/${p.id}`}
+            className="relative block p-3 transition-all duration-300 bg-white border border-red-100 rounded-2xl hover:border-red-600 hover:shadow-xl group"
           >
             {/* Sale Badge */}
             {p.sale && (
@@ -162,7 +164,7 @@ const PopularProducts = () => {
                 </span>
               )}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

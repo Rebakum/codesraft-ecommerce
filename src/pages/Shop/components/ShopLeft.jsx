@@ -4,8 +4,8 @@ import { Range, getTrackBackground } from "react-range";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { Rating } from "@smastrom/react-rating";
-import discountBanner from "/image/Banner.png";
-import discountProduct from "/image/Image.png";
+import discountBanner from "../../../assets/home-assets/banner/bannar-01.jpg";
+import discountProduct from "../../../assets/home-assets/banner/bannar-03.jpg";
 import { GrLinkNext } from "react-icons/gr";
 import {
   Disclosure,
@@ -51,7 +51,7 @@ const ShopLeft = () => {
 
       {/* All Categories */}
 
-      <div className=" w-full mt-6 ">
+      <div className="w-full mt-6 ">
         <div className="divide-y divide-white/5 rounded-xl ">
           <Disclosure as="div" defaultOpen={true}>
             <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
@@ -154,11 +154,11 @@ const ShopLeft = () => {
 
       {/* Price */}
 
-      <div className=" w-full mt-6  ">
+      <div className="w-full mt-6 ">
         <div className="divide-y divide-white/5 rounded-xl ">
           <Disclosure as="div" defaultOpen={true}>
             <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="text-xl font-semibold mb-4">Price</h3>
+              <h3 className="mb-4 text-xl font-semibold">Price</h3>
               <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
             </DisclosureButton>
             <DisclosurePanel>
@@ -231,11 +231,11 @@ const ShopLeft = () => {
 
       {/* Rating */}
 
-      <div className=" w-full mt-6  ">
+      <div className="w-full mt-6 ">
         <div className="divide-y divide-white/5 rounded-xl ">
           <Disclosure as="div" defaultOpen={true}>
             <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="text-xl font-semibold  mb-4">Rating</h3>
+              <h3 className="mb-4 text-xl font-semibold">Rating</h3>
               <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
             </DisclosureButton>
             <DisclosurePanel>
@@ -248,11 +248,11 @@ const ShopLeft = () => {
                     className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="fiveStar" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-orange-500 text-xl">
+                    <span className="flex items-center gap-2 text-xl text-orange-500">
                       {" "}
                       <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
                     </span>
-                    <span className="font-bold text-sm text-black">5.0</span>
+                    <span className="text-sm font-bold text-black">5.0</span>
                   </label>
                 </div>
                 <div className="flex items-center mb-3">
@@ -262,11 +262,11 @@ const ShopLeft = () => {
                     className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="4Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-orange-500 text-xl">
+                    <span className="flex items-center gap-2 text-xl text-orange-500">
                       {" "}
                       <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
                     </span>
-                    <span className="font-bold text-sm text-black">
+                    <span className="text-sm font-bold text-black">
                       4.0 & Up
                     </span>
                   </label>
@@ -278,12 +278,12 @@ const ShopLeft = () => {
                     className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="3Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-orange-500 text-xl">
+                    <span className="flex items-center gap-2 text-xl text-orange-500">
                       {" "}
                       <FaStar /> <FaStar /> <FaStar /> <FaRegStar />{" "}
                       <FaRegStar />
                     </span>
-                    <span className="font-bold text-sm text-black">
+                    <span className="text-sm font-bold text-black">
                       3.0 & Up
                     </span>
                   </label>
@@ -295,12 +295,12 @@ const ShopLeft = () => {
                     className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="2Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-orange-500 text-xl">
+                    <span className="flex items-center gap-2 text-xl text-orange-500">
                       {" "}
                       <FaStar /> <FaStar /> <FaRegStar /> <FaRegStar />{" "}
                       <FaRegStar />
                     </span>
-                    <span className="font-bold text-sm text-black">
+                    <span className="text-sm font-bold text-black">
                       2.0 & Up
                     </span>
                   </label>
@@ -312,12 +312,12 @@ const ShopLeft = () => {
                     className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
                   />
                   <label htmlFor="1Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-orange-500 text-xl">
+                    <span className="flex items-center gap-2 text-xl text-orange-500">
                       {" "}
                       <FaStar /> <FaRegStar /> <FaRegStar /> <FaRegStar />{" "}
                       <FaRegStar />
                     </span>
-                    <span className="font-bold text-sm text-black">
+                    <span className="text-sm font-bold text-black">
                       1.0 & Up
                     </span>
                   </label>
@@ -329,11 +329,11 @@ const ShopLeft = () => {
       </div>
       {/* Popular Tags */}
 
-      <div className=" w-full mt-6  ">
+      <div className="w-full mt-6 ">
         <div className="divide-y divide-white/5 rounded-xl ">
           <Disclosure as="div" defaultOpen={true}>
             <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="text-xl font-semibold mb-4">Popular Tag</h3>
+              <h3 className="mb-4 text-xl font-semibold">Popular Tag</h3>
               <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
             </DisclosureButton>
             <DisclosurePanel>
@@ -367,8 +367,8 @@ const ShopLeft = () => {
             src={discountBanner}
             alt="discount Banner"
           />
-          <div className="inset-0 space-y-3 flex flex-col items-center absolute">
-            <h3 className="text-2xl font-semibold mt-6">
+          <div className="absolute inset-0 flex flex-col items-center space-y-3">
+            <h3 className="mt-6 text-2xl font-semibold">
               <span className=" text-[#FF8A00]">79%</span>Discount
             </h3>
             <p className="text-center">on your first order</p>
@@ -381,9 +381,9 @@ const ShopLeft = () => {
 
       {/* Sale Products */}
       <div>
-        <h3 className="text-xl font-semibold mt-6 mb-4">Sale Products</h3>
+        <h3 className="mt-6 mb-4 text-xl font-semibold">Sale Products</h3>
 
-        <div className="group mb-4">
+        <div className="mb-4 group">
           <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
             <img
               className="w-[40%] h-full"
@@ -396,16 +396,16 @@ const ShopLeft = () => {
                 Red Capsicum
               </h4>
               <h3 className="text-lg font-bold">
-                $20.99 <span className="text-gray line-through">$32.00</span>
+                $20.99 <span className="line-through text-gray">$32.00</span>
               </h3>
-              <span className="flex items-center gap-2 text-orange-500 text-sm">
+              <span className="flex items-center gap-2 text-sm text-orange-500">
                 {" "}
                 <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
               </span>
             </div>
           </div>
         </div>
-        <div className="group mb-4">
+        <div className="mb-4 group">
           <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
             <img
               className="w-[40%] h-full"
@@ -418,16 +418,16 @@ const ShopLeft = () => {
                 Red Capsicum
               </h4>
               <h3 className="text-lg font-bold">
-                $20.99 <span className="text-gray line-through">$32.00</span>
+                $20.99 <span className="line-through text-gray">$32.00</span>
               </h3>
-              <span className="flex items-center gap-2 text-orange-500 text-sm">
+              <span className="flex items-center gap-2 text-sm text-orange-500">
                 {" "}
                 <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
               </span>
             </div>
           </div>
         </div>
-        <div className="group mb-4">
+        <div className="mb-4 group">
           <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
             <img
               className="w-[40%] h-full"
@@ -440,9 +440,9 @@ const ShopLeft = () => {
                 Red Capsicum
               </h4>
               <h3 className="text-lg font-bold">
-                $20.99 <span className="text-gray line-through">$32.00</span>
+                $20.99 <span className="line-through text-gray">$32.00</span>
               </h3>
-              <span className="flex items-center gap-2 text-orange-500 text-sm">
+              <span className="flex items-center gap-2 text-sm text-orange-500">
                 {" "}
                 <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
               </span>

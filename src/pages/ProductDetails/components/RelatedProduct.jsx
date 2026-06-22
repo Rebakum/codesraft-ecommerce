@@ -1,74 +1,82 @@
-import React from "react";
-import Card from "../../Shop/components/Card";
+import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import products from "../../../data/products";
 
-import "react-tooltip/dist/react-tooltip.css";
+const RelatedProduct = ({ currentProduct }) => {
+  const related = products
+    .filter(
+      (p) => p.category === currentProduct.category && p.id !== currentProduct.id
+    )
+    .slice(0, 4);
 
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { useState } from "react";
-import Details from "../../Shop/components/Details";
-const RelatedProduct = () => {
-  const product = [1, 1, 1, 1];
-
-  let [isOpen, setIsOpen] = useState(false);
-
-  function open() {
-    setIsOpen(true);
+  if (related.length === 0) {
+    const fallback = products
+      .filter((p) => p.id !== currentProduct.id)
+      .slice(0, 4);
+    return <RelatedGrid title="You May Also Like" items={fallback} />;
   }
 
-  function close() {
-    setIsOpen(false);
-  }
-  const [quantity, setQuantity] = useState(1);
+  return <RelatedGrid title="Related Products" items={related} />;
+};
 
-  const handleAddProduct = () => {
-    setQuantity(quantity + 1);
-  };
-  const handleRemoveProduct = () => {
-    setQuantity(quantity - 1);
-  };
-  return (
-    <div>
-      <div>
-        <h3 className="text-3xl font-bold text-center mb-10">
-          Related Products
-        </h3>
-      </div>
-
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {product?.map((product, index) => (
-          <Card key={index} open={open} />
-        ))}
-      </div>
-      <div>
-        <Dialog
-          open={isOpen}
-          as="div"
-          className="relative z-10 focus:outline-none"
-          onClose={close}
+const RelatedGrid = ({ title, items }) => (
+  <div>
+    <h3 className="mb-10 text-3xl font-bold text-center">{title}</h3>
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {items.map((product) => (
+        <Link
+          key={product.id}
+          to={`/product/${product.id}`}
+          className="group"
         >
-          <div className="fixed inset-0 z-10  w-full mx-auto overflow-y-auto backdrop-blur-sm backdrop-contrast-50 ">
-            <div className="flex min-h-full items-center justify-center p-4 relative">
-              <DialogPanel
-                transition
-                className="max-w-7xl mx-auto w-full border  rounded-xl bg-white p-6 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 h-auto relative"
-              >
-                {/* Close Button */}
-                <button
-                  onClick={close}
-                  className="btn btn-circle btn-md absolute top-[-50px] bg-gray-200 outline-none right-0"
-                >
-                  X
-                </button>
-                <div>
-                  <Details />
-                </div>
-              </DialogPanel>
+          <div className="transition-all duration-300 bg-white border border-gray-100 rounded-2xl hover:border-red-200 hover:shadow-xl">
+            <div className="relative p-3 overflow-hidden">
+              {product.discount > 0 && (
+                <span className="absolute z-10 px-2 py-1 text-xs font-bold text-white rounded-lg top-3 left-3 bg-red-600">
+                  {product.discount}% OFF
+                </span>
+              )}
+              <div className="flex items-center justify-center h-40 overflow-hidden rounded-xl bg-gray-50">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            </div>
+            <div className="p-4">
+              <p className="mb-1 text-xs font-semibold uppercase text-red-600">
+                {product.category}
+              </p>
+              <h3 className="mb-2 text-sm font-semibold text-gray-800 md:text-base group-hover:text-red-600">
+                {product.name}
+              </h3>
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar
+                    key={i}
+                    className={`text-xs ${
+                      i < product.rating ? "text-yellow-400" : "text-gray-200"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-base font-bold text-red-600">
+                  ${(product.offerPrice || product.regularPrice).toFixed(2)}
+                </span>
+                {product.offerPrice && (
+                  <span className="text-xs text-gray-400 line-through">
+                    ${product.regularPrice.toFixed(2)}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
-        </Dialog>
-      </div>
+        </Link>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default RelatedProduct;

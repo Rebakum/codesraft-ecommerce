@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaSearch, FaHeart, FaShoppingCart, FaUser, FaSun, FaMoon } from "react-icons/fa";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { useTheme } from "../../Context/ThemeContext";
+import { useCart } from "../../Cart/CartContext";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { dark, toggleTheme } = useTheme();
+  const { cartCount } = useCart();
 
   return (
     <div className="w-full">
@@ -117,9 +119,11 @@ const Navbar = () => {
                 className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white"
               >
                 <FaShoppingCart />
-                <span className="absolute flex items-center justify-center w-5 h-5 text-xs text-white rounded-full -top-1 -right-1 bg-red-600">
-                  3
-                </span>
+                {cartCount > 0 && (
+                  <span className="absolute flex items-center justify-center w-5 h-5 text-xs text-white rounded-full -top-1 -right-1 bg-red-600">
+                    {cartCount}
+                  </span>
+                )}
               </Link>
             </div>
           </div>
