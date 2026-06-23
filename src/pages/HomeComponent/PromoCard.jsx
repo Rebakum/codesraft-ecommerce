@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import promo1 from "../../assets/home-assets/banner/bannar-06.jpg";
 import promo2 from "../../assets/home-assets/banner/bannar-05.jpg";
 
@@ -18,6 +18,7 @@ const promos = [
     subtitle: "Beans + French Press + Grinder",
     bgFrom: "from-coffee-700",
     image: promo2,
+    
   },
 ];
 
@@ -31,7 +32,7 @@ const PromoCard = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: i * 0.15 }}
           whileHover={{ scale: 1.02 }}
-          className="relative flex-1 rounded-2xl overflow-hidden cursor-pointer group shadow-md"
+          className="relative flex-1 overflow-hidden shadow-md cursor-pointer rounded-2xl group"
           style={{
             backgroundImage: `url(${promo.image})`,
             backgroundSize: "cover",
@@ -49,7 +50,7 @@ const PromoCard = () => {
             {promo.subtitle && (
               <p className="mt-1 text-xs text-white/70">{promo.subtitle}</p>
             )}
-            <button className="mt-3 bg-white/20 backdrop-blur-sm text-white font-semibold px-5 py-2 rounded-full hover:bg-white/30 transition-all border border-white/30 text-xs">
+            <button className="px-5 py-2 mt-3 text-xs font-semibold text-white transition-all border rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 border-white/30">
               Shop Now &rarr;
             </button>
           </div>

@@ -13,11 +13,12 @@ const categories = [
 
 const Sidebar = ({ onClose }) => {
   return (
-    <div className="h-full bg-white dark:bg-[#2b1a0d] rounded-2xl shadow-md border border-coffee-100 dark:border-coffee-800 overflow-hidden">
+    <div 
+     className="h-full bg-white dark:bg-[#2b1a0d] rounded-2xl shadow-md border border-coffee-100 dark:border-coffee-800 overflow-hidden">
       {/* Header with close button (mobile) */}
       <div className="flex items-center justify-between p-4 border-b border-coffee-100 dark:border-coffee-800 lg:hidden">
         <h3 className="font-bold dark:text-cream-100" style={{ fontFamily: "Georgia, serif" }}>Categories</h3>
-        <button onClick={onClose} className="p-1 rounded-lg hover:bg-coffee-100 dark:hover:bg-coffee-800 transition-colors">
+        <button onClick={onClose} className="p-1 transition-colors rounded-lg hover:bg-coffee-100 dark:hover:bg-coffee-800">
           <HiXMark className="text-xl dark:text-cream-100" />
         </button>
       </div>
@@ -34,36 +35,45 @@ const Sidebar = ({ onClose }) => {
         </div>
       </div>
 
-      {/* Categories */}
-      <div className="px-4 pb-4">
-        <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-coffee-400 dark:text-coffee-500">
-          Shop By Category
-        </h3>
-        <ul className="space-y-1">
-          {categories.map((cat) => {
-            const Icon = cat.icon;
-            return (
-              <li key={cat.name}>
-                <Link
-                  to={cat.to}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-coffee-700 dark:text-coffee-300 hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-200 group"
-                >
-                  <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 group-hover:bg-amber-600 group-hover:text-white transition-all duration-200">
-                    <Icon className="text-sm" />
-                  </span>
-                  <span className="flex-1 text-sm font-medium">{cat.name}</span>
-                  <span className="text-xs font-medium text-coffee-400 dark:text-coffee-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 bg-coffee-100 dark:bg-coffee-800 px-2 py-0.5 rounded-full transition-colors">
-                    {cat.count}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+ 
+     {/* Categories */}
+<div className="px-4 pb-4">
+  <h3 className="mb-3 text-xs font-bold tracking-wider uppercase text-coffee-400 dark:text-coffee-500">
+    Shop By Category
+  </h3>
+
+  <div className="overflow-x-auto lg:overflow-visible scrollbar-hide">
+    <ul className="flex gap-3 pb-2 lg:flex-col lg:gap-1">
+      {categories.map((cat) => {
+        const Icon = cat.icon;
+
+        return (
+          <li key={cat.name} className="shrink-0 lg:w-full">
+            <Link
+              to={cat.to}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-coffee-700 dark:text-coffee-300 hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-200 group bg-white dark:bg-coffee-900 min-w-[220px] lg:min-w-full"
+            >
+              <span className="flex items-center justify-center transition-all duration-200 rounded-lg w-9 h-9 bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 group-hover:bg-amber-600 group-hover:text-white">
+                <Icon className="text-sm" />
+              </span>
+
+              <span className="flex-1 text-sm font-medium">
+                {cat.name}
+              </span>
+
+              <span className="text-xs font-medium text-coffee-400 dark:text-coffee-500 group-hover:text-amber-600 dark:group-hover:text-amber-400 bg-coffee-100 dark:bg-coffee-800 px-2 py-0.5 rounded-full">
+                {cat.count}
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</div>
 
       {/* Promo Banner */}
-      <div className="mx-4 mb-4 p-4 bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl text-white">
+      <div className="p-4 mx-4 mb-4 text-white bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl">
         <FaGift className="mb-2 text-2xl text-amber-200" />
         <h4 className="mb-1 text-sm font-bold">Free Shipping</h4>
         <p className="text-xs text-amber-100">On orders over $40. Freshly roasted &amp; delivered.</p>
@@ -71,13 +81,13 @@ const Sidebar = ({ onClose }) => {
 
       {/* Quick Links */}
       <div className="px-4 pb-4 space-y-2">
-        <Link to="/shipping" className="flex items-center gap-2 text-xs text-coffee-500 dark:text-coffee-400 hover:text-amber-700 transition-colors">
+        <Link to="/shipping" className="flex items-center gap-2 text-xs transition-colors text-coffee-500 dark:text-coffee-400 hover:text-amber-700">
           <FaTruck className="text-amber-600" /> Shipping & Delivery
         </Link>
-        <Link to="/refund-policy" className="flex items-center gap-2 text-xs text-coffee-500 dark:text-coffee-400 hover:text-amber-700 transition-colors">
+        <Link to="/refund-policy" className="flex items-center gap-2 text-xs transition-colors text-coffee-500 dark:text-coffee-400 hover:text-amber-700">
           <FaTag className="text-amber-600" /> Return Policy
         </Link>
-        <Link to="/faq" className="flex items-center gap-2 text-xs text-coffee-500 dark:text-coffee-400 hover:text-amber-700 transition-colors">
+        <Link to="/faq" className="flex items-center gap-2 text-xs transition-colors text-coffee-500 dark:text-coffee-400 hover:text-amber-700">
           <FaStar className="text-amber-600" /> FAQ
         </Link>
       </div>

@@ -262,3 +262,11 @@ html {
   color: #c49a6c;
   opacity: 0.6;
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

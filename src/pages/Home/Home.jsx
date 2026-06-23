@@ -69,16 +69,17 @@ const Home = () => {
         {/* Right Content - 75% */}
         <div className="w-full lg:w-[75%] space-y-8">
           {/* Hero + Promo */}
-          <motion.div
+         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 gap-4 md:grid-cols-7 h-[380px] md:h-[400px]"
+            className="grid grid-cols-1 gap-4 md:grid-cols-7"
           >
-            <div className="h-full md:col-span-5">
+            <div className="md:col-span-5">
               <HeroSlider />
             </div>
-            <div className="h-full md:col-span-2">
+
+            <div className="md:col-span-2">
               <PromoCard />
             </div>
           </motion.div>

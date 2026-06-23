@@ -24,7 +24,7 @@ const HomePopularCategories = () => {
             Featured Categories
           </h2>
         </div>
-        <Link to="/shop" className="flex items-center gap-1 text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors">
+        <Link to="/shop" className="flex items-center gap-1 text-sm font-semibold transition-colors text-amber-700 hover:text-amber-800">
           View All <FaArrowRight className="text-xs" />
         </Link>
       </div>
@@ -47,7 +47,7 @@ const HomePopularCategories = () => {
                 <span className={`flex items-center justify-center w-14 h-14 mb-3 rounded-2xl bg-gradient-to-br ${cat.color} text-white shadow-lg group-hover:scale-110 transition-transform`}>
                   <Icon className="text-xl" />
                 </span>
-                <h3 className="mb-1 text-sm font-bold text-coffee-800 dark:text-cream-100 text-center">{cat.name}</h3>
+                <h3 className="mb-1 text-sm font-bold text-center text-coffee-800 dark:text-cream-100">{cat.name}</h3>
                 <p className="text-xs text-coffee-400 dark:text-coffee-500">{cat.count} items</p>
               </Link>
             </motion.div>

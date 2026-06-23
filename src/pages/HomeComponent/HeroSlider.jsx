@@ -49,11 +49,11 @@ const HeroSlider = () => {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
-        className="h-full"
+        className="h-full "
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative h-full">
+            <div className="relative h-full pt-5">
               <img
                 src={slide.image}
                 alt={slide.title}
@@ -64,7 +64,7 @@ const HeroSlider = () => {
                 <span className={`inline-block ${slide.accent} text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase w-fit`}>
                   {slide.tag}
                 </span>
-                <h2 className="mb-3 text-3xl font-extrabold leading-tight text-white whitespace-pre-line md:text-4xl lg:text-5xl" style={{ fontFamily: "Georgia, serif" }}>
+                <h2 className="mb-3 text-2xl font-extrabold leading-tight text-white whitespace-pre-line lg:text-3xl md:text-4xl lg:text-5xl" style={{ fontFamily: "Georgia, serif" }}>
                   {slide.title}
                 </h2>
                 <div className="flex items-center gap-3 mb-3">
@@ -76,7 +76,7 @@ const HeroSlider = () => {
                 <p className="max-w-sm mb-5 text-sm text-white/70">{slide.description}</p>
                 <Link
                   to="/shop"
-                  className="flex items-center gap-2 px-6 py-3 text-sm font-bold transition-all bg-white rounded-full text-amber-800 hover:shadow-lg w-fit hover:bg-cream-100 active:scale-95"
+                  className="flex items-center gap-2 px-6 py-3 mb-5 text-sm font-bold transition-all bg-white rounded-full text-amber-800 hover:shadow-lg w-fit hover:bg-cream-100 active:scale-95"
                 >
                   Shop Now <FaArrowRight className="text-xs" />
                 </Link>
