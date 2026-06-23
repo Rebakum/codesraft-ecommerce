@@ -1,82 +1,173 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
- 
-/* -Google fonts- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Theme variables for light and dark modes */
+/* ============================================
+   CSS Custom Properties - Light Mode (Default)
+   ============================================ */
 :root {
-  --bg: #ffffff;
-  --text: #111827; /* gray-900 */
-  --muted: #6b7280; /* gray-500 */
-  --nav-bg: #f8fafc; /* light nav */
+  --bg: #fdf8f0;
+  --bg-secondary: #fffdf7;
+  --text: #3e2715;
+  --text-secondary: #7a4f2e;
+  --muted: #7a4f2e;
+  --nav-bg: #fffdf7;
   --card-bg: #ffffff;
-  --border: #e5e7eb; /* gray-200 */
+  --card-bg-hover: #fef7e8;
+  --border: #ecdaba;
+  --border-light: #f5e6d0;
+  --accent: #7a4f2e;
+  --accent-hover: #5c3a20;
+  --accent-light: #f5e6d0;
+  --accent-muted: rgba(122, 79, 46, 0.1);
+  --shadow: rgba(62, 39, 21, 0.08);
+  --shadow-lg: rgba(62, 39, 21, 0.12);
+  --overlay: rgba(62, 39, 21, 0.5);
 }
 
+/* ============================================
+   CSS Custom Properties - Dark Mode
+   ============================================ */
 .dark {
-  --bg: #0b1220; /* dark page bg */
-  --text: #e5e7eb; /* gray-200 */
-  --muted: #9ca3af; /* gray-400 */
-  --nav-bg: #0f1724; /* dark nav */
-  --card-bg: #0b1226;
-  --border: #1f2937; /* gray-800 */
+  --bg: #1a0f08;
+  --bg-secondary: #221510;
+  --text: #f5e6d0;
+  --text-secondary: #c49a6c;
+  --muted: #c49a6c;
+  --nav-bg: #2b1a0d;
+  --card-bg: #2b1a0d;
+  --card-bg-hover: #3e2715;
+  --border: #3e2715;
+  --border-light: #2b1a0d;
+  --accent: #d4a02a;
+  --accent-hover: #e8b93c;
+  --accent-light: #3e2715;
+  --accent-muted: rgba(212, 160, 42, 0.15);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --overlay: rgba(0, 0, 0, 0.6);
 }
 
-/* Utility helpers to ensure elements fallback to variables when using Tailwind classes */
-.theme-bg { background-color: var(--bg) }
-.theme-text { color: var(--text) }
-.theme-muted { color: var(--muted) }
-.theme-nav { background-color: var(--nav-bg) }
-.theme-card { background-color: var(--card-bg) }
-.theme-border { border-color: var(--border) }
+/* ============================================
+   Utility Classes for Theme
+   ============================================ */
+.theme-bg { background-color: var(--bg); transition: background-color 0.3s ease; }
+.theme-bg-secondary { background-color: var(--bg-secondary); transition: background-color 0.3s ease; }
+.theme-text { color: var(--text); transition: color 0.3s ease; }
+.theme-text-secondary { color: var(--text-secondary); transition: color 0.3s ease; }
+.theme-muted { color: var(--muted); transition: color 0.3s ease; }
+.theme-nav { background-color: var(--nav-bg); transition: background-color 0.3s ease; }
+.theme-card { background-color: var(--card-bg); transition: background-color 0.3s ease; }
+.theme-card-hover:hover { background-color: var(--card-bg-hover); }
+.theme-border { border-color: var(--border); transition: border-color 0.3s ease; }
+.theme-shadow { box-shadow: 0 1px 3px var(--shadow); }
+.theme-shadow-lg { box-shadow: 0 4px 12px var(--shadow-lg); }
 
+/* ============================================
+   Global Transitions
+   ============================================ */
 html {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 body {
-  @apply text-black bg-white;
+  @apply bg-cream-50 text-coffee-900;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark body {
-  @apply text-white bg-gray-900;
+  @apply bg-[#1a0f08] text-coffee-100;
 }
 
-*{
+/* Smooth theme transition on all elements */
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              fill 0.3s ease,
+              stroke 0.3s ease !important;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
+/* ============================================
+   Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--border-light);
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* ============================================
+   React Tabs - Dark Mode
+   ============================================ */
+.dark .react-tabs__tab {
+  color: #c49a6c;
+}
+.dark .react-tabs__tab--selected {
+  color: #d4a02a;
+  border-bottom-color: #d4a02a;
+}
+.dark .react-tabs__tab-list {
+  border-bottom-color: #3e2715;
+}
+
+/* ============================================
+   Fonts
+   ============================================ */
 .font-dancingScript {
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
 }
 
+/* ============================================
+   Buttons
+   ============================================ */
 .btnShop {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
   padding: 14px 20px;
-  background-color: #DC2626;
+  background-color: var(--accent);
   color: white;
   font-size: 14px;
   font-weight: 600;
   border-radius: 43px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 .btnShop:hover {
-  background-color: #991B1B;
+  background-color: var(--accent-hover);
+  box-shadow: 0 4px 12px var(--shadow-lg);
+}
+.btnShop:active {
+  transform: scale(0.97);
 }
 
-.text-gray {
-  color: #808080;
-}
-
+/* ============================================
+   Carousel Overrides
+   ============================================ */
 .carousel .thumbs-wrapper {
   position: absolute !important;
   left: -200px;
@@ -91,12 +182,13 @@ body {
 }
 
 .carousel .thumbs-wrapper .selected {
-  border: 2px solid #DC2626 !important;
+  border: 2px solid var(--accent) !important;
 }
 
 .carousel .thumbs-wrapper li:hover {
-  border: 1px solid #DC2626 !important;
+  border: 1px solid var(--accent) !important;
 }
+
 .control-prev,
 .control-next {
   display: none;
@@ -107,24 +199,66 @@ body {
   display: none;
 }
 
-/*  This class replace for container class */
+/* ============================================
+   Container
+   ============================================ */
 .all-container {
-    max-width: 1240px;
-    width: 100%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }
-/* This class for navigation banner section */
-.navbanner{
+
+/* ============================================
+   Nav Banner
+   ============================================ */
+.navbanner {
   background: url(/image/Shop_Banner.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+/* ============================================
+   Selection Color
+   ============================================ */
+::selection {
+  background-color: var(--accent);
+  color: white;
+}
 
+.dark ::selection {
+  background-color: #d4a02a;
+  color: #1a0f08;
+}
 
+/* ============================================
+   Focus Styles
+   ============================================ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
-/* Footer classes */
+.dark :focus-visible {
+  outline-color: #d4a02a;
+}
 
-.footer-text{
-    color: #808080;
+/* ============================================
+   Smooth Scroll
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   Placeholder Color
+   ============================================ */
+::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.dark ::placeholder {
+  color: #c49a6c;
+  opacity: 0.6;
 }

@@ -21,7 +21,7 @@ const RelatedProduct = ({ currentProduct }) => {
 
 const RelatedGrid = ({ title, items }) => (
   <div>
-    <h3 className="mb-10 text-3xl font-bold text-center">{title}</h3>
+    <h3 className="mb-10 text-3xl font-bold text-center dark:text-white">{title}</h3>
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((product) => (
         <Link
@@ -29,14 +29,14 @@ const RelatedGrid = ({ title, items }) => (
           to={`/product/${product.id}`}
           className="group"
         >
-          <div className="transition-all duration-300 bg-white border border-gray-100 rounded-2xl hover:border-red-200 hover:shadow-xl">
+          <div className="transition-all duration-300 bg-white dark:bg-[#2b1a0d] border border-coffee-100 dark:border-coffee-800 rounded-2xl hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-xl">
             <div className="relative p-3 overflow-hidden">
               {product.discount > 0 && (
-                <span className="absolute z-10 px-2 py-1 text-xs font-bold text-white rounded-lg top-3 left-3 bg-red-600">
+                <span className="absolute z-10 px-2 py-1 text-xs font-bold text-white rounded-lg top-3 left-3 bg-amber-700">
                   {product.discount}% OFF
                 </span>
               )}
-              <div className="flex items-center justify-center h-40 overflow-hidden rounded-xl bg-gray-50">
+              <div className="flex items-center justify-center h-40 overflow-hidden rounded-xl bg-coffee-50 dark:bg-coffee-900">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -45,10 +45,10 @@ const RelatedGrid = ({ title, items }) => (
               </div>
             </div>
             <div className="p-4">
-              <p className="mb-1 text-xs font-semibold uppercase text-red-600">
+              <p className="mb-1 text-xs font-semibold uppercase text-amber-700">
                 {product.category}
               </p>
-              <h3 className="mb-2 text-sm font-semibold text-gray-800 md:text-base group-hover:text-red-600">
+              <h3 className="mb-2 text-sm font-semibold text-coffee-800 dark:text-white md:text-base group-hover:text-amber-700">
                 {product.name}
               </h3>
               <div className="flex items-center gap-1 mb-2">
@@ -56,17 +56,17 @@ const RelatedGrid = ({ title, items }) => (
                   <FaStar
                     key={i}
                     className={`text-xs ${
-                      i < product.rating ? "text-yellow-400" : "text-gray-200"
+                      i < product.rating ? "text-amber-400" : "text-coffee-200 dark:text-coffee-700"
                     }`}
                   />
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-base font-bold text-red-600">
+                <span className="text-base font-bold text-amber-700">
                   ${(product.offerPrice || product.regularPrice).toFixed(2)}
                 </span>
                 {product.offerPrice && (
-                  <span className="text-xs text-gray-400 line-through">
+                  <span className="text-xs text-coffee-400 dark:text-coffee-500 line-through">
                     ${product.regularPrice.toFixed(2)}
                   </span>
                 )}

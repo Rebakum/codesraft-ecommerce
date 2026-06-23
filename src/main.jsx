@@ -7,12 +7,15 @@ import {
 import router from './Router/Router.jsx';
 import { ThemeProvider } from './Context/ThemeContext.jsx';
 import { CartProvider } from './Cart/CartContext.jsx';
+import { WishlistProvider } from './Wishlist/WishlistContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
       <CartProvider>
-        <RouterProvider router={router}/>
+        <WishlistProvider>
+          <RouterProvider router={router}/>
+        </WishlistProvider>
       </CartProvider>
     </ThemeProvider>
   </React.StrictMode>,

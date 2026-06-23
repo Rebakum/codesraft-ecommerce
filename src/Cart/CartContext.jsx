@@ -42,14 +42,12 @@ export const CartProvider = ({ children }) => {
     );
   }, []);
 
-  // Decrease quantity by 1 (remove if quantity reaches 0)
+  // Decrease quantity by 1 (clamp at 1)
   const decreaseQuantity = useCallback((id) => {
     setCart((prev) =>
-      prev
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-        .filter((item) => item.quantity > 0)
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, item.quantity - 1) } : item
+      )
     );
   }, []);
 

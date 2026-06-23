@@ -9,7 +9,7 @@ const ProductDetailsCenter = ({ product }) => {
   return (
     <div>
       <Tabs>
-        <TabList className="flex justify-center ">
+        <TabList className="flex justify-center">
           <Tab>Descriptions</Tab>
           <Tab>Additional Information</Tab>
           <Tab>Customer Feedback</Tab>
@@ -20,29 +20,29 @@ const ProductDetailsCenter = ({ product }) => {
           <TabPanel>
             <div className="flex flex-col gap-10 md:flex-row">
               <div className="w-full md:w-1/2">
-                <p>{product.description}</p>
+                <p className="text-coffee-700 dark:text-coffee-300">{product.description}</p>
                 <div className="mt-5">
                   <ul>
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2 mt-2">
-                        <FaCircleCheck className="text-[#DC2626] mt-2" />
-                        <span>{feature}</span>
+                        <FaCircleCheck className="text-amber-600 mt-2" />
+                        <span className="text-coffee-700 dark:text-coffee-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
               <div className="w-full md:w-1/2">
-                <div className="flex flex-col gap-5 p-4 mt-5 border rounded-md shadow-sm md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col gap-5 p-4 mt-5 border border-coffee-200 dark:border-coffee-700 rounded-md shadow-sm md:flex-row md:items-center md:justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full">
-                      <FaCircleCheck className="text-[#DC2626] text-xl" />
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 dark:bg-amber-950/30">
+                      <FaCircleCheck className="text-amber-600 text-xl" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-bold">
+                      <h5 className="text-sm font-bold dark:text-white">
                         {product.discount > 0 ? `${product.discount}% ` : ""}Discount
                       </h5>
-                      <p className="text-sm text-gray">
+                      <p className="text-sm text-coffee-500 dark:text-coffee-400">
                         {product.discount > 0
                           ? `Save your ${product.discount}% money with us`
                           : "Best value guaranteed"}
@@ -50,12 +50,12 @@ const ProductDetailsCenter = ({ product }) => {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full">
-                      <FaCircleCheck className="text-[#DC2626] text-xl" />
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 dark:bg-amber-950/30">
+                      <FaCircleCheck className="text-amber-600 text-xl" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-bold">100% Arabica</h5>
-                      <p className="text-sm text-gray">Premium Quality Beans</p>
+                      <h5 className="text-sm font-bold dark:text-white">100% Arabica</h5>
+                      <p className="text-sm text-coffee-500 dark:text-coffee-400">Premium Quality Beans</p>
                     </div>
                   </div>
                 </div>
@@ -70,20 +70,20 @@ const ProductDetailsCenter = ({ product }) => {
                 <div className="mt-5">
                   <ul className="space-y-3">
                     {Object.entries(info).map(([key, value]) => (
-                      <li key={key} className="flex items-center gap-12 mt-2 font-medium text-sm capitalize">
+                      <li key={key} className="flex items-center gap-12 mt-2 font-medium text-sm capitalize dark:text-coffee-300">
                         {key.replace(/([A-Z])/g, " $1")}:
-                        <span className="text-gray">{value}</span>
+                        <span className="text-coffee-500 dark:text-coffee-400">{value}</span>
                       </li>
                     ))}
-                    <li className="flex items-center gap-12 mt-2 font-medium text-sm">
+                    <li className="flex items-center gap-12 mt-2 font-medium text-sm dark:text-coffee-300">
                       Stock Status:
-                      <span className="text-gray">
+                      <span className="text-coffee-500 dark:text-coffee-400">
                         {product.stock > 0 ? `Available (${product.stock})` : "Out of Stock"}
                       </span>
                     </li>
-                    <li className="flex items-center gap-12 mt-2 font-medium text-sm">
+                    <li className="flex items-center gap-12 mt-2 font-medium text-sm dark:text-coffee-300">
                       Category:
-                      <span className="text-gray">{product.category}</span>
+                      <span className="text-coffee-500 dark:text-coffee-400">{product.category}</span>
                     </li>
                   </ul>
                 </div>
@@ -98,15 +98,15 @@ const ProductDetailsCenter = ({ product }) => {
                 <div key={i} className="mt-4">
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gray-200 rounded-full" />
+                      <div className="w-12 h-12 bg-coffee-200 dark:bg-coffee-700 rounded-full" />
                       <div>
-                        <h5 className="text-sm font-bold">Kristin Watson</h5>
+                        <h5 className="text-sm font-bold dark:text-white">Kristin Watson</h5>
                         <Rating style={{ maxWidth: 100 }} value={4} />
                       </div>
                     </div>
-                    <p className="text-sm text-gray">2 min ago</p>
+                    <p className="text-sm text-coffee-500 dark:text-coffee-400">2 min ago</p>
                   </div>
-                  <p className="mt-1 text-sm text-gray">
+                  <p className="mt-1 text-sm text-coffee-600 dark:text-coffee-400">
                     Savor the smooth flavor of freshly brewed coffee with notes
                     of caramel and cocoa. Enjoy every cup hot or iced, and explore
                     bold blends made for the perfect morning ritual.

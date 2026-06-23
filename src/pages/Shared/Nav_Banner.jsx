@@ -11,8 +11,7 @@ const Nav_Banner = ({ name, path, nameS, pathS = null }) => {
         backgroundImage: `url(${bannerBg})`,
       }}
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-coffee-950/60" />
 
       <div className="relative flex items-center h-full px-4 mx-auto all-container">
         <div className="flex items-center gap-2 text-sm md:text-lg">
@@ -23,24 +22,24 @@ const Nav_Banner = ({ name, path, nameS, pathS = null }) => {
             <IoHomeOutline className="text-xl" />
           </Link>
 
-          <LiaGreaterThanSolid className="text-xs text-white" />
+          <LiaGreaterThanSolid className="text-xs text-white/60" />
 
           <Link
             to={path}
             className={`${
-              pathS ? "text-white" : "text-red-500"
-            } hover:text-red-500 transition-colors`}
+              pathS ? "text-white" : "text-white/80"
+            } hover:text-amber-400 transition-colors`}
           >
             {name}
           </Link>
 
           {pathS && (
             <>
-              <LiaGreaterThanSolid className="text-xs text-white" />
+              <LiaGreaterThanSolid className="text-xs text-white/60" />
 
               <Link
                 to={pathS}
-                className="text-red-500 transition-colors hover:text-red-400"
+                className="text-amber-400 transition-colors hover:text-amber-300"
               >
                 {nameS}
               </Link>

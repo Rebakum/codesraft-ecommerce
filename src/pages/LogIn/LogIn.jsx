@@ -1,23 +1,14 @@
- 
-import Nav_Banner from "../../Shared/Nav-Banner/Nav_Banner";
-
- 
+import Nav_Banner from "../Shared/Nav_Banner";
 
 const LogIn = () => {
-    
-    return (
-        <div>
-            <div>
-                <div>
-                    <Nav_Banner name='Sign In' path="/login"></Nav_Banner>
-                </div>
-                
-                <div>
-                    
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <Nav_Banner name="Sign In" path="/login" />
+      <div className="flex items-center justify-center min-h-[50vh]">
+        <p className="text-coffee-500 dark:text-coffee-400">Login form coming soon.</p>
+      </div>
+    </div>
+  );
 };
 
 export default LogIn;

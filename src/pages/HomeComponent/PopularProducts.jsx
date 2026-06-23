@@ -1,5 +1,6 @@
+import { motion } from "framer-motion";
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaStar } from "react-icons/fa";
 import coffe01 from "../../assets/home-assets/banner/coffe01.webp";
 import coffee02 from "../../assets/home-assets/banner/coffee02.webp";
 import coffe03 from "../../assets/home-assets/banner/coffe03.webp";
@@ -8,165 +9,79 @@ import coffe05 from "../../assets/home-assets/banner/coffe05.webp";
 import coffe06 from "../../assets/home-assets/banner/coffe06.webp";
 
 const products = [
-  {
-    id: 1,
-    name: "Colombian Supremo",
-    category: "Single Origin",
-    price: 18.99,
-    discount: 14.99,
-    rating: 4.8,
-    sale: 21,
-    image: coffe01,
-  },
-  {
-    id: 2,
-    name: "Ethiopian Yirgacheffe",
-    category: "Single Origin",
-    price: 22.99,
-    discount: 17.99,
-    rating: 4.9,
-    sale: 22,
-    image: coffee02,
-  },
-  {
-    id: 3,
-    name: "Italian Espresso",
-    category: "Blend",
-    price: 16.99,
-    discount: 12.99,
-    rating: 4.7,
-    sale: 24,
-    image: coffe03,
-  },
-  {
-    id: 4,
-    name: "Vanilla Cold Brew",
-    category: "Cold Brew",
-    price: 12.99,
-    discount: 9.99,
-    rating: 4.6,
-    sale: 23,
-    image: coffe04,
-  },
-  {
-    id: 5,
-    name: "Hazelnut Roast",
-    category: "Flavored",
-    price: 15.99,
-    discount: 11.99,
-    rating: 4.5,
-    sale: 25,
-    image: coffe05,
-  },
-  {
-    id: 6,
-    name: "Caramel Drip Blend",
-    category: "Blends",
-    price: 34.0,
-    discount: 34.0,
-    rating: 4.0,
-    sale: 3,
-    image: coffe06,
-  },
+  { id: 1, name: "Colombian Supremo", category: "Single Origin", price: 18.99, discount: 14.99, rating: 4.8, sale: 21, image: coffe01 },
+  { id: 2, name: "Ethiopian Yirgacheffe", category: "Single Origin", price: 22.99, discount: 17.99, rating: 4.9, sale: 22, image: coffee02 },
+  { id: 3, name: "Italian Espresso", category: "Blend", price: 16.99, discount: 12.99, rating: 4.7, sale: 24, image: coffe03 },
+  { id: 4, name: "Vanilla Cold Brew", category: "Cold Brew", price: 12.99, discount: 9.99, rating: 4.6, sale: 23, image: coffe04 },
+  { id: 5, name: "Hazelnut Roast", category: "Flavored", price: 15.99, discount: 11.99, rating: 4.5, sale: 25, image: coffe05 },
+  { id: 6, name: "Caramel Drip Blend", category: "Blends", price: 34.0, discount: 34.0, rating: 4.0, sale: 3, image: coffe06 },
+  { id: 7, name: "French Vanilla Latte", category: "Flavored", price: 19.99, discount: 14.99, rating: 4.3, sale: 25, image: coffe01 },
+  { id: 8, name: "Mocha Java", category: "Blends", price: 21.99, discount: 16.99, rating: 4.4, sale: 22, image: coffee02 },
+  { id: 9, name: "Cinnamon Spice Brew", category: "Flavored", price: 17.99, discount: 13.99, rating: 4.2, sale: 22, image: coffe03 },
+  { id: 10, name: "Colombian Dark Roast", category: "Single Origin", price: 23.99, discount: 18.99, rating: 4.8, sale: 21, image: coffe04 },
+  { id: 11, name: "Ethiopian Sidamo", category: "Single Origin", price: 25.99, discount: 20.99, rating: 4.9, sale: 22, image: coffe05 },
+  { id: 12, name: "Italian Roast Espresso", category: "Blend", price: 19.99, discount: 15.99, rating: 4.7, sale: 24, image: coffe06 },
+
 ];
+
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
+const item = { hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } } };
 
 const PopularProducts = () => {
   return (
-    <section className="py-10">
-      {/* Header */}
-      <div className="max-w-3xl mx-auto mb-10 text-center">
-        <p className="mb-3 text-sm font-semibold tracking-[0.2em] uppercase text-red-700">
-          Premium Coffee Collection
-        </p>
-
-        <h1
-          className="mb-4 text-3xl font-bold text-gray-600 md:text-5xl"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
-          Best Selling Coffee Beans
-        </h1>
-
-        <p className="text-gray-600">
-          Explore our most loved coffee selections, expertly sourced and roasted
-          to bring rich flavors, smooth aromas, and an unforgettable coffee
-          experience to every cup.
-        </p>
+    <section className="py-4">
+      <div className="flex items-end justify-between mb-6">
+        <div>
+          <p className="mb-1 text-sm font-semibold tracking-[0.2em] uppercase text-amber-700">Premium Collection</p>
+          <h2 className="text-3xl font-bold text-coffee-900 dark:text-cream-100 md:text-4xl" style={{ fontFamily: "Georgia, serif" }}>
+            Best Selling Coffee
+          </h2>
+        </div>
+        <Link to="/shop" className="flex items-center gap-1 text-sm font-semibold transition-colors text-amber-700 hover:text-amber-800">
+          View All <FaStar className="text-xs" />
+        </Link>
       </div>
 
-      {/* View All */}
-      <div className="flex justify-end mb-8">
-        <button className="flex items-center gap-2 text-sm font-semibold text-red-700 hover:underline">
-          View All Products
-          <FaArrowRight />
-        </button>
-      </div>
-
-      {/* Products */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+      >
         {products.map((p) => (
-          <Link
-            key={p.id}
-            to={`/product/${p.id}`}
-            className="relative block p-3 transition-all duration-300 bg-white border border-red-100 rounded-2xl hover:border-red-600 hover:shadow-xl group"
-          >
-            {/* Sale Badge */}
-            {p.sale && (
-              <span className="absolute z-10 px-2 py-1 text-[10px] md:text-xs font-bold text-white rounded-lg top-3 left-3 bg-red-700">
-                {p.sale}% OFF
-              </span>
-            )}
-
-            {/* Product Image */}
-            <div className="flex items-center justify-center h-32 mb-3 overflow-hidden md:h-40 rounded-xl bg-red-50">
-              <img
-                src={p.image}
-                alt={p.name}
-                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-
-            {/* Category */}
-            <p className="mb-1 text-[10px] md:text-xs font-semibold uppercase text-red-700">
-              {p.category}
-            </p>
-
-            {/* Name */}
-            <h3 className="mb-2 text-sm font-semibold text-gray-800 md:text-base group-hover:text-red-700">
-              {p.name}
-            </h3>
-
-            {/* Rating */}
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <FaStar
-                  key={i}
-                  className={`text-[10px] md:text-xs ${
-                    i < Math.floor(p.rating)
-                      ? "text-red-400"
-                      : "text-gray-200"
-                  }`}
-                />
-              ))}
-              <span className="ml-1 text-[10px] md:text-xs text-gray-400">
-                ({p.rating})
-              </span>
-            </div>
-
-            {/* Price */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-sm font-bold md:text-base text-red-700">
-                ${p.discount.toFixed(2)}
-              </span>
-
-              {p.price !== p.discount && (
-                <span className="text-xs text-gray-400 line-through md:text-sm">
-                  ${p.price.toFixed(2)}
-                </span>
-              )}
-            </div>
-          </Link>
+          <motion.div key={p.id} variants={item}>
+            <Link
+              to={`/product/${p.id}`}
+              className="block p-3 bg-white dark:bg-[#2b1a0d] border border-coffee-100 dark:border-coffee-800 rounded-2xl hover:border-amber-400 hover:shadow-lg transition-all duration-300 group"
+            >
+              <div className="relative mb-3">
+                {p.sale && (
+                  <span className="absolute z-10 px-2 py-1 text-[10px] font-bold text-white bg-amber-700 rounded-lg top-2 left-2">
+                    {p.sale}% OFF
+                  </span>
+                )}
+                <div className="overflow-hidden rounded-xl bg-coffee-50 dark:bg-coffee-900 h-36">
+                  <img src={p.image} alt={p.name} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
+                </div>
+              </div>
+              <p className="mb-1 text-[10px] font-semibold uppercase text-amber-700">{p.category}</p>
+              <h3 className="mb-2 text-sm font-semibold transition-colors text-coffee-800 dark:text-cream-100 group-hover:text-amber-700">{p.name}</h3>
+              <div className="flex items-center gap-1 mb-1">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} className={`text-[10px] ${i < Math.floor(p.rating) ? "text-amber-400" : "text-coffee-200 dark:text-coffee-700"}`} />
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-bold text-amber-700">${p.discount.toFixed(2)}</span>
+                {p.price !== p.discount && (
+                  <span className="text-xs line-through text-coffee-400 dark:text-coffee-500">${p.price.toFixed(2)}</span>
+                )}
+              </div>
+            </Link>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

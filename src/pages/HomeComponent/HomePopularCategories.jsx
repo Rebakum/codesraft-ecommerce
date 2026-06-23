@@ -1,74 +1,59 @@
-import {
-  FaCoffee,
-  FaMugHot,
-  FaLeaf,
-  FaBreadSlice,
-  FaCookieBite,
-  FaGlassWhiskey,
-  FaArrowRight,
-} from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaArrowRight, FaCoffee, FaMugHot, FaLeaf, FaBreadSlice, FaCookieBite, FaGlassWhiskey } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const categories = [
-  { name: "Single Origin", icon: FaCoffee },
-  { name: "Espresso Blends", icon: FaMugHot },
-  { name: "Cold Brew", icon: FaGlassWhiskey },
-  { name: "Decaf", icon: FaLeaf },
-  { name: "Flavored Roasts", icon: FaCookieBite },
-  { name: "Brewing Gear", icon: FaBreadSlice },
+  { name: "Single Origin", icon: FaCoffee, count: 32, color: "from-amber-500 to-amber-700" },
+  { name: "Espresso Blends", icon: FaMugHot, count: 24, color: "from-coffee-500 to-coffee-700" },
+  { name: "Cold Brew", icon: FaGlassWhiskey, count: 18, color: "from-cream-500 to-cream-700" },
+  { name: "Decaf", icon: FaLeaf, count: 12, color: "from-green-500 to-green-700" },
+  { name: "Flavored Roasts", icon: FaCookieBite, count: 21, color: "from-orange-500 to-orange-700" },
+  { name: "Brewing Gear", icon: FaBreadSlice, count: 15, color: "from-amber-600 to-amber-800" },
 ];
+
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
+const item = { hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } } };
 
 const HomePopularCategories = () => {
   return (
-    <section className="py-10">
-      {/* Section Header */}
-      <div className="max-w-3xl mx-auto mb-10 text-center">
-        <span className="text-sm font-semibold tracking-wider uppercase text-red-700">
-          Explore Our Collection
-        </span>
-
-        <h2
-          className="mt-3 mb-4 text-4xl font-bold text-gray-600 md:text-5xl"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
-          Discover Coffee Categories
-        </h2>
-
-        <p className="leading-relaxed text-gray-600">
-          From single-origin gems to versatile blends, find the perfect coffee
-          to suit your taste and brewing style. Explore our curated categories
-          and elevate your coffee experience.
-        </p>
+    <section className="py-4">
+      <div className="flex items-end justify-between mb-6">
+        <div>
+          <p className="mb-1 text-sm font-semibold tracking-[0.2em] uppercase text-amber-700">Explore Our Collection</p>
+          <h2 className="text-3xl font-bold text-coffee-900 dark:text-cream-100 md:text-4xl" style={{ fontFamily: "Georgia, serif" }}>
+            Featured Categories
+          </h2>
+        </div>
+        <Link to="/shop" className="flex items-center gap-1 text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors">
+          View All <FaArrowRight className="text-xs" />
+        </Link>
       </div>
 
-      {/* Category Header */}
-      
-
-      {/* Categories Grid */}
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6"
+      >
         {categories.map((cat) => {
           const Icon = cat.icon;
-
           return (
-            <div
-              key={cat.name}
-              className="flex flex-col items-center py-6 transition-all bg-white border cursor-pointer border-red-100 rounded-2xl hover:border-red-600 hover:shadow-lg hover:text-red-700 group"
-            >
-              <span className="flex items-center justify-center mb-3 transition-colors rounded-full w-14 h-14 bg-red-50 group-hover:bg-red-100">
-                <Icon className="text-2xl text-red-700" />
-              </span>
-
-              <p className="text-sm font-semibold text-center text-gray-600 group-hover:text-red-700">{cat.name}</p>
-            </div>
+            <motion.div key={cat.name} variants={item} whileHover={{ y: -5, scale: 1.03 }}>
+              <Link
+                to="/shop"
+                className="flex flex-col items-center p-5 bg-white dark:bg-[#2b1a0d] border border-coffee-100 dark:border-coffee-800 rounded-2xl hover:border-amber-400 hover:shadow-lg transition-all duration-300 group"
+              >
+                <span className={`flex items-center justify-center w-14 h-14 mb-3 rounded-2xl bg-gradient-to-br ${cat.color} text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                  <Icon className="text-xl" />
+                </span>
+                <h3 className="mb-1 text-sm font-bold text-coffee-800 dark:text-cream-100 text-center">{cat.name}</h3>
+                <p className="text-xs text-coffee-400 dark:text-coffee-500">{cat.count} items</p>
+              </Link>
+            </motion.div>
           );
         })}
-      </div>
-      <div className="flex items-center justify-center mt-10 mb-8">
-        
-
-        <button className="flex items-center gap-2 text-sm font-semibold text-red-700 hover:underline">
-          View All <FaArrowRight />
-        </button>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
+
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } } };
+const item = { hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } };
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -12,78 +16,52 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-10">
-      {/* Section Header */}
-      <div className="max-w-3xl mx-auto mb-10 text-center">
-        <span className="mb-3 text-sm font-semibold tracking-[0.2em] uppercase text-red-700">
-          Testimonials
-        </span>
-
-        <h2
-          className="mt-3 text-4xl font-bold text-gray-600 md:text-5xl"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
+    <section className="py-4">
+      <div className="mb-6">
+        <p className="mb-1 text-sm font-semibold tracking-[0.2em] uppercase text-amber-700">Testimonials</p>
+        <h2 className="text-3xl font-bold text-coffee-900 dark:text-cream-100 md:text-4xl" style={{ fontFamily: "Georgia, serif" }}>
           What Coffee Lovers Say
         </h2>
-
-        <p className="mt-4 text-gray-600">
-          Discover why thousands of customers trust us for their daily coffee
-          experience.
-        </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((testimonial) => (
-          <div
-            key={testimonial.id}
-            className="relative p-8 transition-all duration-300 bg-white border border-gray-100 shadow-sm rounded-3xl hover:shadow-xl"
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="grid grid-cols-1 gap-6 md:grid-cols-3"
+      >
+        {testimonials.map((testimonial, index) => (
+          <motion.div
+            key={`testimonial-${testimonial.name}-${index}`}
+            variants={item}
+            whileHover={{ y: -5 }}
+            className="relative p-6 transition-all duration-300 bg-white border border-coffee-100 dark:bg-[#2b1a0d] dark:border-coffee-800 rounded-2xl hover:shadow-lg"
           >
-            {/* Quote Icon */}
-            <div className="absolute text-5xl text-red-100 top-6 right-6">
+            <div className="absolute text-4xl text-amber-100 dark:text-amber-950/50 top-5 right-5">
               <FaQuoteLeft />
             </div>
-
-            {/* Rating */}
-            <div className="flex gap-1 mb-5">
+            <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <FaStar
                   key={i}
-                  className={`${
-                    i < testimonial.rating
-                      ? "text-yellow-400"
-                      : "text-gray-200"
-                  }`}
+                  className={`text-sm ${i < testimonial.rating ? "text-amber-400" : "text-coffee-200 dark:text-coffee-700"}`}
                 />
               ))}
             </div>
-
-            {/* Review */}
-            <p className="mb-8 leading-relaxed text-gray-600">
-              "{testimonial.testimonial}"
+            <p className="mb-6 text-sm leading-relaxed text-coffee-600 dark:text-coffee-400">
+              &ldquo;{testimonial.testimonial}&rdquo;
             </p>
-
-            {/* User */}
-            <div className="flex items-center gap-4">
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="object-cover border-2 border-red-100 rounded-full w-14 h-14"
-              />
-
+            <div className="flex items-center gap-3">
+              <img src={testimonial.image} alt={testimonial.name} className="object-cover border-2 border-amber-200 dark:border-amber-800 rounded-full w-11 h-11" />
               <div>
-                <h4 className="font-semibold text-gray-900">
-                  {testimonial.name}
-                </h4>
-
-                <p className="text-sm text-gray-500">
-                  Verified Customer
-                </p>
+                <h4 className="text-sm font-semibold text-coffee-900 dark:text-cream-100">{testimonial.name}</h4>
+                <p className="text-xs text-coffee-500 dark:text-coffee-400">Verified Customer</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

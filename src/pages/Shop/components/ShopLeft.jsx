@@ -1,48 +1,25 @@
-import React from "react";
 import { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
-import { FaStar } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa";
-import { Rating } from "@smastrom/react-rating";
+import { FaStar, FaRegStar, FaChevronDown } from "react-icons/fa";
+import { GrLinkNext } from "react-icons/gr";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import discountBanner from "../../../assets/home-assets/banner/bannar-01.jpg";
 import discountProduct from "../../../assets/home-assets/banner/bannar-03.jpg";
-import { GrLinkNext } from "react-icons/gr";
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
-import { FaChevronDown } from "react-icons/fa";
+
 const ShopLeft = () => {
   const [values, setValues] = useState([50, 800]);
   const min = 0;
   const max = 1000;
+
   return (
-    <div>
+    <div className="dark:text-coffee-300">
+      {/* Filter Button */}
       <div className="flex items-center gap-10">
         <button className="btn btnShop">
           Filter{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="19"
-            viewBox="0 0 22 19"
-            fill="none"
-          >
-            <path
-              d="M18 5H9"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M13 14H4"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19" fill="none">
+            <path d="M18 5H9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M13 14H4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             <circle cx="5" cy="5" r="4" stroke="white" strokeWidth="1.5" />
             <circle cx="17" cy="14" r="4" stroke="white" strokeWidth="1.5" />
           </svg>
@@ -50,405 +27,171 @@ const ShopLeft = () => {
       </div>
 
       {/* All Categories */}
-
-      <div className="w-full mt-6 ">
-        <div className="divide-y divide-white/5 rounded-xl ">
-          <Disclosure as="div" defaultOpen={true}>
-            <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="text-xl font-semibold ">All Categories</h3>
-              <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel>
-              <div>
-                <form className="flex flex-col gap-3 mt-3">
-                  <div className="flex items-center gap-2">
-                    {" "}
-                    <input
-                      type="radio"
-                      id="single-origin"
-                      name="category"
-                      value="single-origin"
-                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
-                    />{" "}
-                    <label htmlFor="single-origin">
-                      {" "}
-                      <span className="cursor-pointer">Single Origin (25)</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {" "}
-                    <input
-                      type="radio"
-                      id="roastery"
-                      name="category"
-                      value="roastery"
-                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
-                    />{" "}
-                    <label htmlFor="roastery">
-                      {" "}
-                      <span className="cursor-pointer">Roastery (25)</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {" "}
-                    <input
-                      type="radio"
-                      id="blends"
-                      name="category"
-                      value="blends"
-                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
-                    />{" "}
-                    <label htmlFor="blends">
-                      {" "}
-                      <span className="cursor-pointer">Blends(25)</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {" "}
-                    <input
-                      type="radio"
-                      id="cold-brew"
-                      name="category"
-                      value="cold-brew"
-                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
-                    />{" "}
-                    <label htmlFor="cold-brew">
-                      {" "}
-                      <span className="cursor-pointer">Cold Brew(25)</span>
-                    </label>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {" "}
-                    <input
-                      type="radio"
-                      id="subscriptions"
-                      name="category"
-                      value="subscriptions"
-                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
-                    />{" "}
-                    <label htmlFor="subscriptions">
-                      <span className="cursor-pointer">
-                        Subscriptions(25)
-                      </span>
-                    </label>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {" "}
-                    <input
-                      type="radio"
-                      id="coffee-gear"
-                      name="category"
-                      value="coffee-gear"
-                      className="radio border-2 border-[#DC2626]  focus:!outline-none"
-                    />{" "}
-                    <label htmlFor="coffee-gear">
-                      <span className="cursor-pointer">Coffee Gear(25)</span>
-                    </label>
-                  </div>
-                </form>
-              </div>
-            </DisclosurePanel>
-          </Disclosure>
-        </div>
+      <div className="w-full mt-6">
+        <Disclosure as="div" defaultOpen={true}>
+          <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
+            <h3 className="text-xl font-semibold dark:text-white">All Categories</h3>
+            <FaChevronDown className="size-5 group-data-[open]:rotate-180" />
+          </DisclosureButton>
+          <DisclosurePanel>
+            <form className="flex flex-col gap-3 mt-3">
+              {["Single Origin (25)", "Roastery (25)", "Blends (25)", "Cold Brew (25)", "Subscriptions (25)", "Coffee Gear (25)"].map((cat) => (
+                <div key={cat} className="flex items-center gap-2">
+                  <input type="radio" name="category" className="radio border-2 border-amber-600 focus:!outline-none" />
+                  <span className="cursor-pointer">{cat}</span>
+                </div>
+              ))}
+            </form>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
 
       {/* Price */}
-
-      <div className="w-full mt-6 ">
-        <div className="divide-y divide-white/5 rounded-xl ">
-          <Disclosure as="div" defaultOpen={true}>
-            <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="mb-4 text-xl font-semibold">Price</h3>
-              <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel>
-              <div className="w-full">
-                <Range
-                  step={1}
-                  min={min}
-                  max={max}
-                  values={values}
-                  onChange={(values) => setValues(values)}
-                  renderTrack={({ props, children }) => (
-                    <div
-                      {...props}
-                      style={{
-                        ...props.style,
-                        height: "6px",
-                        width: "100%",
-                        background: getTrackBackground({
-                          values,
-                          colors: ["#ccc", "#DC2626", "#ccc"],
-                          min,
-                          max,
-                        }),
-                      }}
-                    >
-                      {children}
-                    </div>
-                  )}
-                  renderThumb={({ props, isDragged }) => (
-                    <div
-                      {...props}
-                      style={{
-                        ...props.style,
-                        height: "20px",
-                        width: "20px",
-                        borderRadius: "50%",
-                        backgroundColor: "#FFF",
-                        border: "3px solid #DC2626",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        boxShadow: "0px 2px 6px #AAA",
-                        outlineColor: "#DC2626",
-                      }}
-                    >
-                      <div
-                        style={{
-                          height: "10px",
-                          width: "10px",
-                          backgroundColor: isDragged ? "#FFF" : "#FFF",
-                        }}
-                      />
-                    </div>
-                  )}
-                />
-                <div className="mt-3 ">
-                  <p>
-                    Price:
-                    <span className="font-bold">
-                      {" "}
-                      {values[0]} - {values[1]}
-                    </span>
-                  </p>
-                </div>
+      <div className="w-full mt-6">
+        <Disclosure as="div" defaultOpen={true}>
+          <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
+            <h3 className="mb-4 text-xl font-semibold dark:text-white">Price</h3>
+            <FaChevronDown className="size-5 group-data-[open]:rotate-180" />
+          </DisclosureButton>
+          <DisclosurePanel>
+            <div className="w-full">
+              <Range
+                step={1}
+                min={min}
+                max={max}
+                values={values}
+                onChange={(values) => setValues(values)}
+                renderTrack={({ props, children }) => (
+                  <div
+                    {...props}
+                    style={{
+                      ...props.style,
+                      height: "6px",
+                      width: "100%",
+                      background: getTrackBackground({ values, colors: ["#ecdaba", "#7a4f2e", "#ecdaba"], min, max }),
+                    }}
+                  >
+                    {children}
+                  </div>
+                )}
+                renderThumb={({ props, isDragged }) => (
+                  <div
+                    {...props}
+                    style={{
+                      ...props.style,
+                      height: "20px",
+                      width: "20px",
+                      borderRadius: "50%",
+                      backgroundColor: "#FFF",
+                      border: "3px solid #7a4f2e",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      boxShadow: "0px 2px 6px #AAA",
+                      outlineColor: "#7a4f2e",
+                    }}
+                  >
+                    <div style={{ height: "10px", width: "10px", backgroundColor: "#FFF" }} />
+                  </div>
+                )}
+              />
+              <div className="mt-3">
+                <p>
+                  Price:<span className="font-bold"> {values[0]} - {values[1]}</span>
+                </p>
               </div>
-            </DisclosurePanel>
-          </Disclosure>
-        </div>
+            </div>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
 
       {/* Rating */}
-
-      <div className="w-full mt-6 ">
-        <div className="divide-y divide-white/5 rounded-xl ">
-          <Disclosure as="div" defaultOpen={true}>
-            <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="mb-4 text-xl font-semibold">Rating</h3>
-              <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel>
-              <form>
-                <div className="flex items-center mb-3">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    id="fiveStar"
-                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
-                  />
-                  <label htmlFor="fiveStar" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-xl text-orange-500">
-                      {" "}
-                      <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+      <div className="w-full mt-6">
+        <Disclosure as="div" defaultOpen={true}>
+          <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
+            <h3 className="mb-4 text-xl font-semibold dark:text-white">Rating</h3>
+            <FaChevronDown className="size-5 group-data-[open]:rotate-180" />
+          </DisclosureButton>
+          <DisclosurePanel>
+            <form>
+              {[
+                { id: "fiveStar", stars: 5, label: "5.0" },
+                { id: "4Star", stars: 4, label: "4.0 & Up" },
+                { id: "3Star", stars: 3, label: "3.0 & Up" },
+                { id: "2Star", stars: 2, label: "2.0 & Up" },
+                { id: "1Star", stars: 1, label: "1.0 & Up" },
+              ].map((r) => (
+                <div key={r.id} className="flex items-center mb-3">
+                  <input type="checkbox" id={r.id} className="checked:bg-amber-600 mr-3 h-5 w-5 checkbox-rating text-amber-600" />
+                  <label htmlFor={r.id} className="flex items-center gap-2">
+                    <span className="flex items-center gap-1 text-xl text-amber-500">
+                      {[...Array(5)].map((_, i) => (i < r.stars ? <FaStar key={i} /> : <FaRegStar key={i} />))}
                     </span>
-                    <span className="text-sm font-bold text-black">5.0</span>
+                    <span className="text-sm font-bold dark:text-white">{r.label}</span>
                   </label>
                 </div>
-                <div className="flex items-center mb-3">
-                  <input
-                    type="checkbox"
-                    id="4Star"
-                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
-                  />
-                  <label htmlFor="4Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-xl text-orange-500">
-                      {" "}
-                      <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
-                    </span>
-                    <span className="text-sm font-bold text-black">
-                      4.0 & Up
-                    </span>
-                  </label>
-                </div>
-                <div className="flex items-center mb-3">
-                  <input
-                    type="checkbox"
-                    id="3Star"
-                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
-                  />
-                  <label htmlFor="3Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-xl text-orange-500">
-                      {" "}
-                      <FaStar /> <FaStar /> <FaStar /> <FaRegStar />{" "}
-                      <FaRegStar />
-                    </span>
-                    <span className="text-sm font-bold text-black">
-                      3.0 & Up
-                    </span>
-                  </label>
-                </div>
-                <div className="flex items-center mb-3">
-                  <input
-                    type="checkbox"
-                    id="2Star"
-                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
-                  />
-                  <label htmlFor="2Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-xl text-orange-500">
-                      {" "}
-                      <FaStar /> <FaStar /> <FaRegStar /> <FaRegStar />{" "}
-                      <FaRegStar />
-                    </span>
-                    <span className="text-sm font-bold text-black">
-                      2.0 & Up
-                    </span>
-                  </label>
-                </div>
-                <div className="flex items-center mb-3">
-                  <input
-                    type="checkbox"
-                    id="1Star"
-                    className="checked:bg-[#DC2626] mr-3 h-5 w-5 checkbox-rating text-[#DC2626] "
-                  />
-                  <label htmlFor="1Star" className="flex items-center gap-2">
-                    <span className="flex items-center gap-2 text-xl text-orange-500">
-                      {" "}
-                      <FaStar /> <FaRegStar /> <FaRegStar /> <FaRegStar />{" "}
-                      <FaRegStar />
-                    </span>
-                    <span className="text-sm font-bold text-black">
-                      1.0 & Up
-                    </span>
-                  </label>
-                </div>
-              </form>
-            </DisclosurePanel>
-          </Disclosure>
-        </div>
+              ))}
+            </form>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
-      {/* Popular Tags */}
 
-      <div className="w-full mt-6 ">
-        <div className="divide-y divide-white/5 rounded-xl ">
-          <Disclosure as="div" defaultOpen={true}>
-            <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
-              <h3 className="mb-4 text-xl font-semibold">Popular Tag</h3>
-              <FaChevronDown className="size-5  group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel>
-              <div className="grid grid-cols-3 gap-2">
-                <button className="btn rounded-[43px]">Healthy</button>
-                <button className="btn rounded-[43px] bg-[#DC2626] text-white">
-                  Low fat
+      {/* Popular Tags */}
+      <div className="w-full mt-6">
+        <Disclosure as="div" defaultOpen={true}>
+          <DisclosureButton className="group flex w-full items-center justify-between focus:!outline-none">
+            <h3 className="mb-4 text-xl font-semibold dark:text-white">Popular Tag</h3>
+            <FaChevronDown className="size-5 group-data-[open]:rotate-180" />
+          </DisclosureButton>
+          <DisclosurePanel>
+            <div className="grid grid-cols-3 gap-2">
+              {["Arabica", "Robusta", "Organic", "Single Origin", "Blends", "Dark Roast", "Medium Roast", "Light Roast", "Cold Brew"].map((tag) => (
+                <button key={tag} className={`btn rounded-[43px] ${tag === "Robusta" ? "bg-amber-700 text-white" : "dark:bg-coffee-800 dark:text-coffee-300"}`}>
+                  {tag}
                 </button>
-                <button className="btn rounded-[43px]">Vegetarian</button>
-                <button className="btn rounded-[43px]">Kid foods</button>
-                <button className="btn rounded-[43px]">Vitamins</button>
-                <button className="btn rounded-[43px]">Bread</button>
-                <button className="btn rounded-[43px]">Meat</button>
-                <button className="btn rounded-[43px]">Snacks</button>
-                <button className="btn rounded-[43px]">Tiffin</button>
-                <button className="btn rounded-[43px]">Launch</button>
-                <button className="btn rounded-[43px]">Dinner</button>
-                <button className="btn rounded-[43px]">Breackfast</button>
-                <button className="btn rounded-[43px]">Fruit</button>
-              </div>
-            </DisclosurePanel>
-          </Disclosure>
-        </div>
+              ))}
+            </div>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
 
       {/* Discount Banner */}
-      <div>
-        <div className="w-full h-[300px] mt-7 relative">
-          <img
-            className="w-full h-full"
-            src={discountBanner}
-            alt="discount Banner"
-          />
-          <div className="absolute inset-0 flex flex-col items-center space-y-3">
-            <h3 className="mt-6 text-2xl font-semibold">
-              <span className=" text-[#FF8A00]">79%</span>Discount
-            </h3>
-            <p className="text-center">on your first order</p>
-            <button className="text-[#DC2626] font-bold flex items-center gap-2">
-              Shop Now <GrLinkNext />
-            </button>
-          </div>
+      <div className="w-full h-[300px] mt-7 relative rounded-xl overflow-hidden">
+        <img className="w-full h-full object-cover" src={discountBanner} alt="discount Banner" />
+        <div className="absolute inset-0 flex flex-col items-center space-y-3">
+          <h3 className="mt-6 text-2xl font-semibold text-white">
+            <span className="text-amber-400">79%</span> Discount
+          </h3>
+          <p className="text-center text-white">on your first order</p>
+          <button className="font-bold flex items-center gap-2 bg-white px-4 py-2 rounded-full text-amber-700">
+            Shop Now <GrLinkNext />
+          </button>
         </div>
       </div>
 
       {/* Sale Products */}
       <div>
-        <h3 className="mt-6 mb-4 text-xl font-semibold">Sale Products</h3>
-
-        <div className="mb-4 group">
-          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
-            <img
-              className="w-[40%] h-full"
-              src={discountProduct}
-              alt="discounted Product"
-            />
-            <div className="w-full ">
-              {" "}
-              <h4 className="font-semibold group-hover:text-[#991B1B]">
-                Red Capsicum
-              </h4>
-              <h3 className="text-lg font-bold">
-                $20.99 <span className="line-through text-gray">$32.00</span>
-              </h3>
-              <span className="flex items-center gap-2 text-sm text-orange-500">
-                {" "}
-                <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
-              </span>
+        <h3 className="mt-6 mb-4 text-xl font-semibold dark:text-white">Sale Products</h3>
+        {[
+          { name: "Ethiopia Roast", price: 14.99, oldPrice: 20.99, img: discountProduct },
+          { name: "Organic Beans", price: 14.0, oldPrice: 20.0, img: discountProduct },
+          { name: "Vanilla Cold Brew", price: 9.0, oldPrice: 20.99, img: discountProduct },
+        ].map((item, idx) => (
+          <div key={idx} className="mb-4 group">
+            <div className="h-28 flex gap-2 items-center border border-coffee-200 dark:border-coffee-700 rounded-xl group-hover:border-amber-600 transition-colors">
+              <img className="w-[40%] h-full rounded-l-xl object-cover" src={item.img} alt={item.name} />
+              <div className="w-full">
+                <h4 className="font-semibold text-sm group-hover:text-amber-700 dark:text-white">{item.name}</h4>
+                <h3 className="text-lg font-bold dark:text-white">
+                  ${item.price.toFixed(2)} <span className="line-through text-coffee-400 dark:text-coffee-500 text-sm">${item.oldPrice.toFixed(2)}</span>
+                </h3>
+                <span className="flex items-center gap-1 text-sm text-amber-500">
+                  <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="mb-4 group">
-          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
-            <img
-              className="w-[40%] h-full"
-              src={discountProduct}
-              alt="discounted Product"
-            />
-            <div className="w-full ">
-              {" "}
-              <h4 className="font-semibold group-hover:text-[#991B1B]">
-                Red Capsicum
-              </h4>
-              <h3 className="text-lg font-bold">
-                $20.99 <span className="line-through text-gray">$32.00</span>
-              </h3>
-              <span className="flex items-center gap-2 text-sm text-orange-500">
-                {" "}
-                <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="mb-4 group">
-          <div className="h-28 flex gap-2 items-center border rounded-md shadow bottom-2  group-hover:border-[#991B1B]">
-            <img
-              className="w-[40%] h-full"
-              src={discountProduct}
-              alt="discounted Product"
-            />
-            <div className="w-full ">
-              {" "}
-              <h4 className="font-semibold group-hover:text-[#991B1B]">
-                Red Capsicum
-              </h4>
-              <h3 className="text-lg font-bold">
-                $20.99 <span className="line-through text-gray">$32.00</span>
-              </h3>
-              <span className="flex items-center gap-2 text-sm text-orange-500">
-                {" "}
-                <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaRegStar />
-              </span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
